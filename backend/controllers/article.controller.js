@@ -98,6 +98,6 @@ exports.delete = (req, res) => {
                     message: "Could not delete Article with id " + req.params.id
                 });
             }
-        } else res.send({ message: `Customer was deleted successfully!` });
+        } else res.send({ message: `Article was deleted successfully!` });
     });
 };
