@@ -34,7 +34,11 @@ exports.findAll = (req, res) => {
                 message:
                     err.message || "Some error occurred while retrieving articles."
             });
-        else res.send(data);
+        else
+            for(let i=0; i < data.length; i++){
+                data[i].image = data[i].image.toString("base64")
+            }
+            res.send(data);
     });
 
 };
@@ -76,7 +80,8 @@ exports.update = (req, res) => {
                         message: "Error updating Article with id " + req.params.id
                     });
                 }
-            } else res.send(data);
+            } else
+                res.send(data);
         }
     );
 };
@@ -86,11 +91,11 @@ exports.delete = (req, res) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Not found Customer with id ${req.params.id}.`
+                    message: `Not found Article with id ${req.params.id}.`
                 });
             } else {
                 res.status(500).send({
-                    message: "Could not delete Customer with id " + req.params.id
+                    message: "Could not delete Article with id " + req.params.id
                 });
             }
         } else res.send({ message: `Customer was deleted successfully!` });

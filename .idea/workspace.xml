@@ -2149,9 +2149,9 @@
       <path value="$PROJECT_DIR$/bakery/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="69" />
-    <option name="y" value="2" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="1" />
     <option name="width" value="1430" />
     <option name="height" value="910" />
   </component>
@@ -2220,12 +2220,12 @@
       <option name="presentableId" value="Default" />
       <updated>1614084504079</updated>
       <workItem from="1614084505918" duration="33000" />
-      <workItem from="1614084642624" duration="3177000" />
+      <workItem from="1614084642624" duration="3456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3210000" />
+    <option name="totallyTimeSpent" value="3489000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2237,7 +2237,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1431" height="772" extended-state="7" />
+    <frame x="-7" y="-7" width="1431" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946237" />

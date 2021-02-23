@@ -36,7 +36,6 @@ Article.findById = (articleId, result) => {
             return;
         }
 
-        // not found Customer with the id
         result({ kind: "not_found" }, null);
     });
 };
