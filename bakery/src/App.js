@@ -16,7 +16,7 @@ function App() {
           <Switch>
           <Route path="/home" component={Home} />
           <Route path="/about" component={About} />
-          <Route component={NoMatch} />
+          <Route component={Home} />
         </Switch>
 
         </Router>
