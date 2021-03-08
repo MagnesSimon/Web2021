@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import * from
+import banniere from './boulangerie/banniere.jpg'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={image} className="App-logo" alt="logo" />
-        <p>
-          Page d'acceuil
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={banniere} className="App-banniere" alt="banniere" />
+        <h1 className="nomBoulangerie">Boulangerie Lonbois</h1>
       </header>
+      <body>
+
+      </body>
     </div>
   );
 }
