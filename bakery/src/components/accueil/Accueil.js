@@ -1,9 +1,9 @@
 import React from "react";
 
-import './Home.css'
+import './Accueil.css'
 import banniere from "../../boulangerie/banniere.jpg";
 
-const Home = ({element}) => {
+const Accueil = ({element}) => {
     return(
         <header className="App-header">
             <img src={banniere} className="App-banniere" alt="banniere" />
@@ -13,4 +13,4 @@ const Home = ({element}) => {
     )
 }
 
-export default Home
+export default Accueil

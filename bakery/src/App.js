@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from './components/navbar/NavigationBar';
 import React from "react";
-import Home from "./components/home/Home";
+import Accueil from "./components/accueil/Accueil";
 import Commande from "./components/commande/Commande";
 import Inscription from "./components/inscription/Inscription";
 import Connexion from "./components/connexion/Connexion";
@@ -19,7 +19,7 @@ function App() {
               <Route path="/commande" component={Commande} />
               <Route path="/connexion" component={Connexion} />
               <Route path="/inscription" component={Inscription} />
-              <Route component={Home} />
+              <Route component={Accueil} />
           </Switch>
 
           </Router>
