@@ -22,3 +22,10 @@
     padding-right: 25em;
     text-align: center;
 }
+.tableau-horaire{
+    position: absolute; left: 40%; top: 600px;
+}
+
+.ligne-impaire{
+    background: lightgray;
+}
