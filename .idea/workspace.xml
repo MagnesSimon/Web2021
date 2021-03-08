@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cd59684-c060-439f-a27e-0cc269cd466d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08-03-21_14_53__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08-03-21_14_53__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08-03-21_14_53__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08-03-21_14_53__Default_Changelist_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/components/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +140,14 @@
       <workItem from="1614160104922" duration="1384000" />
       <workItem from="1615168983763" duration="616000" />
     </task>
+    <task id="LOCAL-00001" summary="barre de Navigation intégrée">
+      <created>1615215996115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615215996115</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -185,6 +190,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="barre de Navigation intégrée" />
+    <option name="LAST_COMMIT_MESSAGE" value="barre de Navigation intégrée" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bakery/src/index.js">
