@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from './components/navbar/NavigationBar';
 import React from "react";
 import {About} from "./components/navbar/About";
-import {NoMatch} from "./components/navbar/NoMatch";
+import Home from "./components/home/Home";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Router>
               <NavigationBar />              <Switch>
               <Route path="/about" component={About} />
-              <Route component={NoMatch} />
+              <Route component={Home} />
           </Switch>
 
           </Router>
