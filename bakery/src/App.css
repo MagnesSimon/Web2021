@@ -2,15 +2,6 @@
   text-align: center;
 }
 
-.App-banniere{
-  position: absolute;top: 50px; left: 0px;
-}
-
-.nomBoulangerie {
-  position: absolute; top: 300px;
-  color: orangered;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
