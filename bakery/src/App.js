@@ -4,15 +4,21 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from './components/navbar/NavigationBar';
 import React from "react";
-import {About} from "./components/navbar/About";
 import Home from "./components/home/Home";
+import Commande from "./components/commande/Commande";
+import Inscription from "./components/inscription/Inscription";
+import Connexion from "./components/connexion/Connexion";
+import Contact from "./components/contact/Contact";
 
 function App() {
   return (
       <React.Fragment>
           <Router>
               <NavigationBar />              <Switch>
-              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/commande" component={Commande} />
+              <Route path="/connexion" component={Connexion} />
+              <Route path="/inscription" component={Inscription} />
               <Route component={Home} />
           </Switch>
 

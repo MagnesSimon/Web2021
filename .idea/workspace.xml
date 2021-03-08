@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cd59684-c060-439f-a27e-0cc269cd466d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/bakery/src/components/commande/Commande.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bakery/src/components/contact/Contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bakery/src/components/inscription/Inscription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NoMatch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/About.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +143,14 @@
       <workItem from="1614160104922" duration="1384000" />
       <workItem from="1615168983763" duration="616000" />
     </task>
+    <task id="LOCAL-00001" summary="plus de no match, page home par défaut">
+      <created>1615217301307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615217301307</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -180,6 +193,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="plus de no match, page home par défaut" />
+    <option name="LAST_COMMIT_MESSAGE" value="plus de no match, page home par défaut" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bakery/src/index.js">
