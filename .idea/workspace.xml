@@ -14,7 +14,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -138,6 +137,7 @@
       <workItem from="1614084642624" duration="4985000" />
       <workItem from="1614160104922" duration="1384000" />
       <workItem from="1615168983763" duration="616000" />
+
     </task>
     <task id="LOCAL-00001" summary="barre de Navigation intégrée">
       <created>1615215996115</created>
@@ -193,6 +193,7 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -201,6 +202,7 @@
     <MESSAGE value="barre de Navigation intégrée" />
     <MESSAGE value="retrait du no match" />
     <option name="LAST_COMMIT_MESSAGE" value="retrait du no match" />
+
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bakery/src/index.js">
