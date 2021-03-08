@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cd59684-c060-439f-a27e-0cc269cd466d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bakery/src/components/accueil/horaire.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bakery/src/components/navbar/Navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/accueil/Accueil.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/accueil/Accueil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/accueil/Accueil.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/accueil/Accueil.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/home/Home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +14,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -116,7 +109,6 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -145,36 +137,23 @@
       <workItem from="1614084642624" duration="4985000" />
       <workItem from="1614160104922" duration="1384000" />
       <workItem from="1615168983763" duration="616000" />
+
     </task>
-    <task id="LOCAL-00001" summary="plus de no match, page home par défaut">
-      <created>1615217301307</created>
+    <task id="LOCAL-00001" summary="barre de Navigation intégrée">
+      <created>1615215996115</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1615217301307</updated>
+      <updated>1615215996115</updated>
     </task>
-    <task id="LOCAL-00002" summary="Ajout des components commande, contact, connexion et inscription + redirection depuis la barre de navigation">
-      <created>1615218855767</created>
+    <task id="LOCAL-00002" summary="retrait du no match">
+      <created>1615216179237</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1615218855767</updated>
+      <updated>1615216179237</updated>
     </task>
-    <task id="LOCAL-00003" summary="refactor, rename de home en accueil">
-      <created>1615218999169</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1615218999169</updated>
-    </task>
-    <task id="LOCAL-00004" summary="ajout paragraphe descriptif et son css">
-      <created>1615220380906</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1615220380906</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -214,16 +193,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="plus de no match, page home par défaut" />
-    <MESSAGE value="Ajout des components commande, contact, connexion et inscription + redirection depuis la barre de navigation" />
-    <MESSAGE value="refactor, rename de home en accueil" />
-    <MESSAGE value="ajout paragraphe descriptif et son css" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout paragraphe descriptif et son css" />
+    <MESSAGE value="barre de Navigation intégrée" />
+    <MESSAGE value="retrait du no match" />
+    <option name="LAST_COMMIT_MESSAGE" value="retrait du no match" />
+
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bakery/src/index.js">
