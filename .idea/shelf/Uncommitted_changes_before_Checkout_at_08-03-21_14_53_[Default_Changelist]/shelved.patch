@@ -1,0 +1,24 @@
+Index: bakery/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import logo from './logo.svg';\r\nimport './App.css';\r\nimport * from\r\n\r\nfunction App() {\r\n  return (\r\n    <div className=\"App\">\r\n      <header className=\"App-header\">\r\n        <img src={image} className=\"App-logo\" alt=\"logo\" />\r\n        <p>\r\n          Page d'acceuil\r\n        </p>\r\n        <a\r\n          className=\"App-link\"\r\n          href=\"https://reactjs.org\"\r\n          target=\"_blank\"\r\n          rel=\"noopener noreferrer\"\r\n        >\r\n          Learn React\r\n        </a>\r\n      </header>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/bakery/src/App.js b/bakery/src/App.js
+--- a/bakery/src/App.js	(revision e239fb12f93ac0359c1e3c7615cc3fcf191034ae)
++++ b/bakery/src/App.js	(date 1615211563134)
+@@ -1,12 +1,11 @@
+ import logo from './logo.svg';
+ import './App.css';
+-import * from
+ 
+ function App() {
+   return (
+     <div className="App">
+       <header className="App-header">
+-        <img src={image} className="App-logo" alt="logo" />
++
+         <p>
+           Page d'acceuil
+         </p>
