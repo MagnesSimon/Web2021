@@ -3,10 +3,11 @@
 }
 
 .nomBoulangerie {
-    position: absolute; top: 300px;
+    position: absolute; top: 350px;
     color: orangered;
 }
 
-.p {
-    position: relative; top: 400px;
+
+.App-banniere {
+
 }
