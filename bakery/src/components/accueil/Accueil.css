@@ -1,0 +1,31 @@
+.App-banniere{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+
+.nomBoulangerie {
+    position: absolute; top: 350px;
+    color: orangered;
+    text-align: center;
+}
+.b-p-s{
+    position: absolute; top: 400px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.descriptif{
+    position: absolute; top: 450px;
+    font-size: 14px;
+    padding-left: 25em;
+    padding-right: 25em;
+    text-align: center;
+}
+.tableau-horaire{
+    position: absolute; left: 40%; top: 600px;
+}
+
+.ligne-impaire{
+    background: lightgray;
+}
