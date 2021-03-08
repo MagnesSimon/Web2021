@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0cd59684-c060-439f-a27e-0cc269cd466d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NoMatch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/home/Home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +111,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -137,7 +137,23 @@
       <workItem from="1614084642624" duration="4985000" />
       <workItem from="1614160104922" duration="1384000" />
       <workItem from="1615168983763" duration="616000" />
+
     </task>
+    <task id="LOCAL-00001" summary="barre de Navigation intégrée">
+      <created>1615215996115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615215996115</updated>
+    </task>
+    <task id="LOCAL-00002" summary="retrait du no match">
+      <created>1615216179237</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615216179237</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -177,9 +193,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="barre de Navigation intégrée" />
+    <MESSAGE value="retrait du no match" />
+    <option name="LAST_COMMIT_MESSAGE" value="retrait du no match" />
+
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bakery/src/index.js">
