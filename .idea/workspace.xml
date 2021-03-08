@@ -50,8 +50,8 @@
       <path value="$PROJECT_DIR$/bakery/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="66" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="65" />
     <option name="width" value="1430" />
     <option name="height" value="910" />
   </component>
@@ -116,12 +116,12 @@
       <workItem from="1614084505918" duration="33000" />
       <workItem from="1614084642624" duration="4985000" />
       <workItem from="1614160104922" duration="1384000" />
-      <workItem from="1615209744789" duration="715000" />
+      <workItem from="1615168983763" duration="616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6402000" />
+    <option name="totallyTimeSpent" value="7018000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -135,7 +135,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1431" height="772" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24946237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24946237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -147,7 +147,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3296875" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3296875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
