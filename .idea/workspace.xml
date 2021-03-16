@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0cd59684-c060-439f-a27e-0cc269cd466d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/components/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/home/Home.js" afterDir="false" />
     </list>
     <ignored path="C:\Users\luk_b\github\Web2021\.idea\shelf/" />
     <ignored path="$PROJECT_DIR$/backend/node_modules/" />
@@ -163,16 +161,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -218,13 +210,9 @@
     <option name="width" value="1430" />
     <option name="height" value="910" />
   </component>
-<<<<<<< Updated upstream
-  <component name="ProjectId" id="1pTem0FdrPMUPHPPcyGJdYWAsC1" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-=======
->>>>>>> Stashed changes
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -270,33 +258,21 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../s" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\luk_b\github\Web2021\image\wiki" />
     </key>
   </component>
-<<<<<<< Updated upstream
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-=======
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -309,7 +285,6 @@
       </list>
     </option>
   </component>
->>>>>>> Stashed changes
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -324,26 +299,22 @@
       <workItem from="1614084642624" duration="4985000" />
       <workItem from="1614160104922" duration="1384000" />
       <workItem from="1615168983763" duration="616000" />
-<<<<<<< Updated upstream
-      <workItem from="1615211677738" duration="2359000" />
-=======
       <workItem from="1615288529897" duration="26000" />
       <workItem from="1615894785449" duration="2469000" />
->>>>>>> Stashed changes
     </task>
-    <task id="LOCAL-00001" summary="ajout d'une bannière">
-      <created>1615213326020</created>
+    <task id="LOCAL-00001" summary="barre de Navigation intégrée">
+      <created>1615215996115</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1615213326020</updated>
+      <updated>1615215996115</updated>
     </task>
-    <task id="LOCAL-00002" summary="déplacement de l'acceuil dans un component Home">
-      <created>1615213751160</created>
+    <task id="LOCAL-00002" summary="retrait du no match">
+      <created>1615216179237</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1615213751160</updated>
+      <updated>1615216179237</updated>
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
@@ -383,14 +354,6 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-<<<<<<< Updated upstream
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajout d'une bannière" />
-    <MESSAGE value="déplacement de l'acceuil dans un component Home" />
-    <option name="LAST_COMMIT_MESSAGE" value="déplacement de l'acceuil dans un component Home" />
-=======
     <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -400,7 +363,17 @@
     <MESSAGE value="barre de Navigation intégrée" />
     <MESSAGE value="retrait du no match" />
     <option name="LAST_COMMIT_MESSAGE" value="retrait du no match" />
->>>>>>> Stashed changes
+    <option name="version" value="1" />
+
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="barre de Navigation intégrée" />
+    <MESSAGE value="retrait du no match" />
+    <option name="LAST_COMMIT_MESSAGE" value="retrait du no match" />
+
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bakery/src/index.js">
