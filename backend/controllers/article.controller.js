@@ -7,7 +7,6 @@ exports.create = (req, res) => {
         });
     }
 
-    // Create a Customer
     const article = new Article({
         art_nom: req.body.art_nom,
         cat_id: req.body.cat_id,
@@ -16,7 +15,6 @@ exports.create = (req, res) => {
         description: req.body.description
     });
 
-    // Save Customer in the database
     Article.create(article, (err, data) => {
         if (err)
             res.status(500).send({
