@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import styled from 'styled-components';
+import useSticky from "../hooks/useSticky";
+
 const Styles = styled.div`
   .navbar { background-color: #222; }
   a, .navbar-nav, .navbar-light .nav-link {
@@ -18,9 +20,10 @@ const Styles = styled.div`
     right: 25%;
   }
 `;
-export const NavigationBar = () => (
+export const NavigationBar = ({ sticky }) => (
     <Styles>
-        <Navbar className="navbar" expand="lg">
+        <Navbar className={sticky ? "navbar navbar-sticky" : "navbar"} expand="lg">
+            {/*{sticky ? "navbar navbar-sticky" : "navbar"}*/}
             {/*<Navbar.Brand href="/">Tutorial</Navbar.Brand>*/}
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
