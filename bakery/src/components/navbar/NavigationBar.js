@@ -37,4 +37,4 @@ export const NavigationBar = ({ sticky }) => (
             </Navbar.Collapse>
         </Navbar>
     </Styles>
-)
+);
