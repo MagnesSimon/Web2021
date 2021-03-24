@@ -1,0 +1,13 @@
+Page méthodologie séparer en point gestion d'équipe 
+Description assez courte, pq avoir travailler comme ça sur git ?
+	-> se renseigner si bien ou pas
+Outil utilisé pour commit = Utiliser Github Desktop 
+Chacun gère ses outils github, trello, clockify
+Utilisation composants react dans la page OK
+Element dynamique => page ou on se trouve afficher certaine chose, cacher d'autre etc
+Premiere page (acceuil) correcte mais pas complète.
+
+Scénario: Etant donné que, Quand, alors
+ex: quand je clique sur ce lien, alors cette page s'affiche
+	Si je suis logé alors m'indique que je suis déjà log
+	=> Doit être assez court et précis
