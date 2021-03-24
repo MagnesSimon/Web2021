@@ -41,7 +41,7 @@ Article.findById = (articleId, result) => {
 };
 
 Article.getAll = result => {
-    sql.query("SELECT * FROM articles", (err, res) => {
+    sql.query("select art_id, art_nom, articles.cat_Id,categories.cat_nom as catNom, prix, image, description from articles inner join categories on articles.cat_Id = categories.cat_Id", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
