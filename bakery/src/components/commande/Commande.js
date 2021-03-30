@@ -5,28 +5,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import * as ReactBootStrap from 'react-bootstrap'
 
 
-class Commande extends React.Component{
-    constructor(props){
+class Commande extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             posts: []
         }
     }
 
-    async getDataAxios(){
-        const response =
-            await axios.get("http://localhost:3001/articles")
-        console.log(response.data)
-    }
-
     componentDidMount() {
         axios.get(`http://localhost:3001/articles`)
             .then(res => {
-                const posts = res.data.map(obj => ({nom: obj.art_nom, prix: obj.prix,catNom: obj.catNom, image: obj.image}));
+                const posts = res.data.map(obj => ({ nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
                 this.setState({ posts });
             });
     }
-
 
     renderTableData() {
         return this.state.posts.map((post, index) => {
@@ -43,24 +36,23 @@ class Commande extends React.Component{
         })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <header className="header-commande">
                 <h1>Page de commande</h1>
-                <button onClick={this.getDataAxios}>click me</button>
                 <div>
                     <ReactBootStrap.Table bordered hover>
                         <thead>
-                        <tr>
-                            <td>image</td>
-                            <td>nom</td>
-                            <td>prix</td>
-                            <td>catégorie</td>
-                            <td>commander</td>
-                        </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>nom</td>
+                                <td>prix</td>
+                                <td>catégorie</td>
+                                <td>commander</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        {this.renderTableData()}
+                            {this.renderTableData()}
                         </tbody>
                     </ReactBootStrap.Table>
                 </div>
