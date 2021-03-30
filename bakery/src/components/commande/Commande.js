@@ -21,6 +21,7 @@ class Commande extends React.Component {
         .bind(this);
     }
 
+    //retourne les donnéees en liste pour la pagination
     componentDidMount() {
         axios.get(`http://62.210.130.145:3001/articles`)
             .then(res => {
