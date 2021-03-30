@@ -13,7 +13,7 @@ class Commande extends React.Component {
             posts: [],
             offset: 0,
             data: [],
-            perPage: 3,
+            perPage: 6,
             currentPage: 0
         }
         this.handlePageClick = this
@@ -22,9 +22,9 @@ class Commande extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:3001/articles`)
+        axios.get(`http://62.210.130.145:3001/articles`)
             .then(res => {
-                const posts = res.data.map(obj => ({ nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
+                const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const postData = slice.map(pd => <React.Fragment>
                     <div>
@@ -69,6 +69,7 @@ class Commande extends React.Component {
                     <div>Catégorie : {post.catNom}</div>
                     <div>{post.prix.toFixed(2)}€</div>
                 </div>
+                
 
             )
         })
