@@ -1,31 +1,44 @@
-.App-banniere{
-    position: absolute;
-    top: 50px;
-    width: 100%;
+.App-banniere {
+  width: 100%;
+}
+h1 {
+  color: #33484b;
+  font: 46px, Catamaran, sans-serif;
+  font-weight: bold;
+  padding-top: 15px;
 }
 
-.nomBoulangerie {
-    position: absolute; top: 350px;
-    color: orangered;
-    text-align: center;
-}
-.b-p-s{
-    position: absolute; top: 400px;
-    font-size: 18px;
-    text-align: center;
+.bloc {
+  font-family: Catamaran, sans-serif;
+  font-size: 18px;
 }
 
-.descriptif{
-    position: absolute; top: 450px;
-    font-size: 14px;
-    padding-left: 25em;
-    padding-right: 25em;
-    text-align: center;
+.descriptif {
+  color: #33484b;
+  font: 15px, Catamaran, sans-serif;
+  padding-left: 15em;
+  padding-right: 15em;
+  text-align: center;
 }
-.tableau-horaire{
-    position: absolute; left: 40%; top: 600px;
+.tableau-horaire {
+  position: absolute;
+  left: 40%;
 }
 
-.ligne-impaire{
-    background: lightgray;
+@media only screen and (max-width: 800px) {
+  h1 {
+    color: #33484b;
+    font: 46px, Catamaran, sans-serif;
+    padding-top: 10px;
+  }
+  .descriptif {
+    color: #33484b;
+    font: 15px, Catamaran, sans-serif;
+    padding-left: 3em;
+    padding-right: 3em;
+    text-align: center;
+  }
+  .tableau-horaire {
+      left: 15%
+  }
 }

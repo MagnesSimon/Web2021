@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import useSticky from "../hooks/useSticky";
 
 const Styles = styled.div`
-  .navbar { background-color: #222; }
+  .navbar { background-color: #ffa701; }
   a, .navbar-nav, .navbar-light .nav-link {
-    color: #9FFFCB;
+    color: #FFFFFF;
     &:hover { color: white; }
   }
   .navbar-brand {
     font-size: 1.4em;
-    color: #9FFFCB;
+    color: #FFFFFF;
     &:hover { color: white; }
   }
   .form-center {
