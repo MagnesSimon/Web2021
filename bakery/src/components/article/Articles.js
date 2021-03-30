@@ -1,19 +1,19 @@
 import React from "react";
 import axios from "axios";
-import "./Commande.css";
+import "./Articles.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as ReactBootStrap from 'react-bootstrap'
 
 import ReactPaginate from 'react-paginate';
 
-class Commande extends React.Component {
+class Articles extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             posts: [],
             offset: 0,
             data: [],
-            perPage: 3,
+            perPage: 6,
             currentPage: 0
         }
         this.handlePageClick = this
@@ -28,10 +28,11 @@ class Commande extends React.Component {
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const postData = slice.map(pd => <React.Fragment>
                     <div>
-                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                    <div>{pd.nom}</div>
-                    <div>Catégorie : {pd.catNom}</div>
-                    <div>{pd.prix.toFixed(2)}€</div>
+                        <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                        <div>{pd.nom}</div>
+                        <div>Catégorie : {pd.catNom}</div>
+                        <div>{pd.prix.toFixed(2)}€</div>
+                        <button>ajouter au panier</button>
                     </div>
                 </React.Fragment>)
                 this.setState({
@@ -68,6 +69,8 @@ class Commande extends React.Component {
                     <div>{post.nom}</div>
                     <div>Catégorie : {post.catNom}</div>
                     <div>{post.prix.toFixed(2)}€</div>
+
+
                 </div>
 
             )
@@ -101,4 +104,4 @@ class Commande extends React.Component {
     }
 }
 
-export default Commande
+export default Articles
