@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
-import "./Commande.css";
+import "./Article.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as ReactBootStrap from 'react-bootstrap'
 
 import ReactPaginate from 'react-paginate';
 
-class Commande extends React.Component {
+class Article extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -103,4 +103,4 @@ class Commande extends React.Component {
     }
 }
 
-export default Commande
+export default Article
