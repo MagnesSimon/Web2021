@@ -1,43 +1,45 @@
 import React from "react";
 import axios from "axios";
-import "./Commande.css";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import * as ReactBootStrap from 'react-bootstrap'
+import ReactPaginate from "react-paginate";
 
-import ReactPaginate from 'react-paginate';
-
-class Commande extends React.Component {
-    constructor(props) {
-        super(props);
+class Panier extends React.Component{
+    constructor() {
+        super();
         this.state = {
-            posts: [],
+            post: [],
             offset: 0,
             data: [],
             perPage: 6,
             currentPage: 0
         }
         this.handlePageClick = this
-        .handlePageClick
-        .bind(this);
+            .handlePageClick.bind(this);
     }
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
+        function ajouterAuPanier(article) {
+            return function () {
+                console.log("ajout " + article);
+            };
+        }
+
         axios.get(`http://62.210.130.145:3001/articles`)
             .then(res => {
                 const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const postData = slice.map(pd => <React.Fragment>
                     <div>
-                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                    <div>{pd.nom}</div>
-                    <div>Catégorie : {pd.catNom}</div>
-                    <div>{pd.prix.toFixed(2)}€</div>
+                        <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                        <div>{pd.nom}</div>
+                        <div>Catégorie : {pd.catNom}</div>
+                        <div>{pd.prix.toFixed(2)}€</div>
+                        <button className={"ajoutAuPanier"} onClick={ajouterAuPanier(pd.id)}>ajout</button>
                     </div>
                 </React.Fragment>)
                 this.setState({
                     pageCount: Math.ceil(posts.length / this.state.perPage),
-                   
+
                     postData
                 })
                 this.setState({ posts });
@@ -60,29 +62,12 @@ class Commande extends React.Component {
 
     };
 
-    renderTableData() {
-
-        return this.state.posts.map((post, index) => {
-            return (
-                <div className='grid-item' key={index}>
-                    <img className={"image"} src={`data:image/jpeg;base64,${post.image}`} />
-                    <div>{post.nom}</div>
-                    <div>Catégorie : {post.catNom}</div>
-                    <div>{post.prix.toFixed(2)}€</div>
-                </div>
-                
-
-            )
-        })
-    }
-
-
     render() {
-        return (
+        return(
             <div>
-                <h1>Page de commande</h1>
+                <h1>Mon panier</h1>
                 <div className='container'>
-                {this.state.postData}
+                    {this.state.postData}
                 </div>
                 <ReactPaginate
                     previousLabel={"prev"}
@@ -97,10 +82,8 @@ class Commande extends React.Component {
                     subContainerClassName={"pages pagination"}
                     activeClassName={"active"}/>
             </div>
-            
-            
         )
     }
 }
 
-export default Commande
+export default Panier

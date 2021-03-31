@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from './components/navbar/NavigationBar';
 import React from "react";
 import Accueil from "./components/accueil/Accueil";
-import Commande from "./components/commande/Commande";
+import Article from "./components/article/Article";
 import Inscription from "./components/inscription/Inscription";
 import Connexion from "./components/connexion/Connexion";
 import Contact from "./components/contact/Contact";
+import Panier from "./components/panier/Panier";
 
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
           <Router>
               <NavigationBar />              <Switch>
               <Route path="/contact" component={Contact} />
-              <Route path="/commande" component={Commande} />
+              <Route path="/Article" component={Article} />
               <Route path="/connexion" component={Connexion} />
               <Route path="/inscription" component={Inscription} />
+              <Route path="/panier" component={Panier} />
               <Route component={Accueil} />
           </Switch>
           </Router>
