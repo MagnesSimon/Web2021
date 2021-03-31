@@ -8,6 +8,7 @@ import Article from "./components/article/Article";
 import Inscription from "./components/inscription/Inscription";
 import Connexion from "./components/connexion/Connexion";
 import Contact from "./components/contact/Contact";
+import Panier from "./components/panier/Panier";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
               <Route path="/Article" component={Article} />
               <Route path="/connexion" component={Connexion} />
               <Route path="/inscription" component={Inscription} />
+              <Route path="/panier" component={Panier} />
               <Route component={Accueil} />
           </Switch>
           </Router>

@@ -23,6 +23,12 @@ class Article extends React.Component {
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
+        function ajouterAuPanier(article) {
+            return function () {
+                console.log("ajout " + article);
+            };
+        }
+
         axios.get(`http://62.210.130.145:3001/articles`)
             .then(res => {
                 const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
@@ -33,7 +39,7 @@ class Article extends React.Component {
                         <div>{pd.nom}</div>
                         <div>Catégorie : {pd.catNom}</div>
                         <div>{pd.prix.toFixed(2)}€</div>
-                        <button>Ajouter au panier</button>
+                        <button className={"ajoutAuPanier"} onClick={ajouterAuPanier(pd.id)}>ajout</button>
                     </div>
                 </React.Fragment>)
                 this.setState({
@@ -77,11 +83,10 @@ class Article extends React.Component {
         })
     }
 
-
     render() {
         return (
             <div>
-                <h1>Page de commande</h1>
+                <h1>Liste des Articles</h1>
                 <div className='container'>
                 {this.state.postData}
                 </div>

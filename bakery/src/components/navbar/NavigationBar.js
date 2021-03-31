@@ -33,6 +33,7 @@ export const NavigationBar = ({ sticky }) => (
                     <Nav.Item><Nav.Link href="/contact">|   Contact     </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/connexion">|   Connexion     </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inscription">|   Inscription     </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/panier">|   Panier     </Nav.Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
