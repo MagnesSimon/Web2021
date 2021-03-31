@@ -29,10 +29,11 @@ class Article extends React.Component {
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
                 const postData = slice.map(pd => <React.Fragment>
                     <div>
-                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                    <div>{pd.nom}</div>
-                    <div>Catégorie : {pd.catNom}</div>
-                    <div>{pd.prix.toFixed(2)}€</div>
+                        <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                        <div>{pd.nom}</div>
+                        <div>Catégorie : {pd.catNom}</div>
+                        <div>{pd.prix.toFixed(2)}€</div>
+                        <button>Ajouter au panier</button>
                     </div>
                 </React.Fragment>)
                 this.setState({
