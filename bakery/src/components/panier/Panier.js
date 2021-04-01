@@ -2,27 +2,43 @@ import React from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 
+let listePanier = [];
+
+
+
+function ajouterAuPanier(article) {
+    return function () {
+        console.log("ajout " + article);
+        listePanier.push(article);
+        console.log(listePanier);
+
+    };
+}
+
 class Panier extends React.Component{
+    get listePanier() {
+        return this._listePanier;
+    }
+
+    set listePanier(value) {
+        this._listePanier = value;
+    }
+
     constructor() {
         super();
+        this._listePanier= [];
         this.state = {
-            post: [],
+            posts: [],
             offset: 0,
             data: [],
             perPage: 6,
             currentPage: 0
         }
-        this.handlePageClick = this
-            .handlePageClick.bind(this);
+        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
-        function ajouterAuPanier(article) {
-            return function () {
-                console.log("ajout " + article);
-            };
-        }
 
         axios.get(`http://62.210.130.145:3001/articles`)
             .then(res => {
@@ -34,7 +50,7 @@ class Panier extends React.Component{
                         <div>{pd.nom}</div>
                         <div>Catégorie : {pd.catNom}</div>
                         <div>{pd.prix.toFixed(2)}€</div>
-                        <button className={"ajoutAuPanier"} onClick={ajouterAuPanier(pd.id)}>ajout</button>
+                        <button className={"ajoutAuPanier"} onClick={ajouterAuPanier(pd)}>ajout</button>
                     </div>
                 </React.Fragment>)
                 this.setState({
