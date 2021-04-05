@@ -19,6 +19,7 @@ class Panier extends React.Component{
         console.log("ajout de " + article);
     }
 
+
     render() {
         return(
             <div>

@@ -26,9 +26,10 @@ class Article extends React.Component {
     }
 
     recevoirArticle = article => {
-        this.state.panier.push(article);
+        console.log(this.article);
+        const panier = article.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
         this.setState({panier: this.state.panier})
-        console.log("ajout de " + article);
+        console.log(this.state.panier)
     }
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
@@ -42,9 +43,11 @@ class Article extends React.Component {
                         <div>{pd.nom}</div>
                         <div>Catégorie : {pd.catNom}</div>
                         <div>{pd.prix.toFixed(2)}€</div>
-                        <button className={"ajoutAuPanier"} onClick={()=>this.props.recevoirArticle(this.props.article)}>ajout</button>
+                        <button className={"ajoutAuPanier"} onClick={this.recevoirArticle}>
+                            panier</button>
                     </div>
                 </React.Fragment>)
+
                 this.setState({
                     pageCount: Math.ceil(posts.length / this.state.perPage),
                    
