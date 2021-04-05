@@ -28,4 +28,4 @@ class Panier extends React.Component{
     }
 }
 
-export default connect(recevoirArticle)(Panier)
+export default Panier

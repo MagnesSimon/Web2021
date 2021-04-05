@@ -18,12 +18,18 @@ class Article extends React.Component {
             data: [],
             perPage: 6,
             currentPage: 0,
+            panier: [],
         }
         this.handlePageClick = this
             .handlePageClick
             .bind(this);
     }
 
+    recevoirArticle = article => {
+        this.state.panier.push(article);
+        this.setState({panier: this.state.panier})
+        console.log("ajout de " + article);
+    }
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
         axios.get(`http://62.210.130.145:3001/articles`)
