@@ -12,6 +12,7 @@ import Panier from "../panier/Panier";
 class Article extends React.Component {
     constructor(props) {
         super(props);
+        this.recevoirArticle = this.recevoirArticle.bind(this);
         this.state = {
             posts: [],
             offset: 0,
@@ -25,15 +26,17 @@ class Article extends React.Component {
             .bind(this);
     }
 
-    recevoirArticle = article => {
+    recevoirArticle(article){
         console.log(this.article);
         const panier = article.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
         this.setState({panier: this.state.panier})
         console.log(this.state.panier)
     }
+
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
-        axios.get(`http://62.210.130.145:3001/articles`)
+        //axios.get(`http://62.210.130.145:3001/articles`)
+        axios.get(`http://localhost:3001/articles`)
             .then(res => {
                 const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
@@ -43,7 +46,7 @@ class Article extends React.Component {
                         <div>{pd.nom}</div>
                         <div>Catégorie : {pd.catNom}</div>
                         <div>{pd.prix.toFixed(2)}€</div>
-                        <button className={"ajoutAuPanier"} onClick={this.recevoirArticle}>
+                        <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle("ff")}>
                             panier</button>
                     </div>
                 </React.Fragment>)
