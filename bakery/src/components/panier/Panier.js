@@ -8,7 +8,7 @@ class Panier extends React.Component {
         this.state = {
             posts: [],
             offset: 0,
-            data: {},
+            data: [],
             perPage: 6,
             currentPage: 0,
         }
@@ -32,27 +32,28 @@ class Panier extends React.Component {
     afficherPanier = () => {
         const panier = localStorage.getItem('panier');
         console.log(panier);
+
+        const listePanier = panier.map(panier => <React.Fragment>
+            <div>
+                <img className={"image"} src={`data:image/jpeg;base64,${panier.image}`} />
+                <div>{panier.nom}</div>
+                <div>Catégorie : {panier.catNom}</div>
+                <div>{panier.prix.toFixed(2)}€</div>
+            </div>
+        </React.Fragment>);
+        //this.setState({posts});
+        console.log(this.state.posts)
     }
 
     render() {
+        const panier = localStorage.getItem('panier');
+
         return (
             <div>
                 <h1>Liste des Articles</h1>
                 <div className='container'>
-                    <button onClick={this.afficherPanier}>Afficher</button>
+                    {this.state.postData}
                 </div>
-                <ReactPaginate
-                    previousLabel={"prev"}
-                    nextLabel={"next"}
-                    breakLabel={"..."}
-                    breakClassName={"break-me"}
-                    pageCount={this.state.pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
-                    onPageChange={this.handlePageClick}
-                    containerClassName={"pagination"}
-                    subContainerClassName={"pages pagination"}
-                    activeClassName={"active"}/>
             </div>
 
 

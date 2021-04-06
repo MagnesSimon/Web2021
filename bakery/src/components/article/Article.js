@@ -84,19 +84,6 @@ class Article extends React.Component {
 
     };
 
-    renderTableData() {
-        return this.state.posts.map((post, index) => {
-            return (
-                <div className='grid-item' key={index}>
-                    <img className={"image"} src={`data:image/jpeg;base64,${post.image}`} />
-                    <div>{post.nom}</div>
-                    <div>Catégorie : {post.catNom}</div>
-                    <div>{post.prix.toFixed(2)}€</div>
-                </div>
-            )
-        })
-    }
-
     render() {
         return (
             <div>
@@ -117,8 +104,6 @@ class Article extends React.Component {
                     subContainerClassName={"pages pagination"}
                     activeClassName={"active"}/>
             </div>
-            
-            
         )
     }
 }
