@@ -7,19 +7,17 @@ import * as ReactBootStrap from 'react-bootstrap'
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
 
-
+const panier = [];
 
 class Article extends React.Component {
     constructor(props) {
         super(props);
-        this.recevoirArticle = this.recevoirArticle.bind(this);
         this.state = {
             posts: [],
             offset: 0,
             data: [],
             perPage: 6,
             currentPage: 0,
-            panier: [],
         }
         this.handlePageClick = this
             .handlePageClick
@@ -28,7 +26,8 @@ class Article extends React.Component {
 
     recevoirArticle = (article) => {
         console.log(article);
-        //const panier = panier.push(article);
+        panier.push(article);
+        console.log(panier);
         //const panier = article.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
         //this.setState({panier: this.state.panier})
         //console.log(this.state.panier)
