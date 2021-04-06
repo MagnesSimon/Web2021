@@ -30,7 +30,8 @@ class Panier extends React.Component {
 
     };
     afficherPanier = () => {
-
+        const panier = localStorage.getItem('panier');
+        console.log(panier);
     }
 
     render() {

@@ -24,10 +24,13 @@ class Article extends React.Component {
     }
 
     recevoirArticle = (article) => {
+        localStorage.clear();
         console.log(article);
         panier.push(article);
         console.log(panier);
-        const listePanier = panier.map(panier => <React.Fragment>
+        localStorage.setItem('panier',panier);
+        //console.log(localStorage.getItem('panier'));
+        /*const listePanier = panier.map(panier => <React.Fragment>
             <div>
                 <img className={"image"} src={`data:image/jpeg;base64,${panier.image}`} />
                 <div>{panier.nom}</div>
@@ -35,6 +38,7 @@ class Article extends React.Component {
                 <div>{panier.prix.toFixed(2)}€</div>
             </div>
         </React.Fragment>);
+         */
     }
 
     //retourne les donnéees en liste pour la pagination
