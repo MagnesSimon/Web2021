@@ -26,17 +26,17 @@ class Article extends React.Component {
             .bind(this);
     }
 
-    recevoirArticle(article){
-        console.log(this.article);
-        const panier = article.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
-        this.setState({panier: this.state.panier})
-        console.log(this.state.panier)
+    recevoirArticle = (article) => {
+        console.log(article);
+        //const panier = panier.push(article);
+        //const panier = article.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
+        //this.setState({panier: this.state.panier})
+        //console.log(this.state.panier)
     }
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
-        //axios.get(`http://62.210.130.145:3001/articles`)
-        axios.get(`http://localhost:3001/articles`)
+        axios.get(`http://62.210.130.145:3001/articles`)
             .then(res => {
                 const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
@@ -46,10 +46,11 @@ class Article extends React.Component {
                         <div>{pd.nom}</div>
                         <div>Catégorie : {pd.catNom}</div>
                         <div>{pd.prix.toFixed(2)}€</div>
-                        <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle("ff")}>
+                        <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle(pd)}>
                             panier</button>
                     </div>
                 </React.Fragment>)
+
 
                 this.setState({
                     pageCount: Math.ceil(posts.length / this.state.perPage),
