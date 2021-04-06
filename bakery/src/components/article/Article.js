@@ -2,12 +2,11 @@ import React from "react";
 import axios from "axios";
 import "./Article.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import * as ReactBootStrap from 'react-bootstrap'
 
 import ReactPaginate from 'react-paginate';
-import Panier from "../panier/Panier";
 
 const panier = [];
+const visuArticle = true;
 
 class Article extends React.Component {
     constructor(props) {
@@ -28,9 +27,14 @@ class Article extends React.Component {
         console.log(article);
         panier.push(article);
         console.log(panier);
-        //const panier = article.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
-        //this.setState({panier: this.state.panier})
-        //console.log(this.state.panier)
+        const listePanier = panier.map(panier => <React.Fragment>
+            <div>
+                <img className={"image"} src={`data:image/jpeg;base64,${panier.image}`} />
+                <div>{panier.nom}</div>
+                <div>Catégorie : {panier.catNom}</div>
+                <div>{panier.prix.toFixed(2)}€</div>
+            </div>
+        </React.Fragment>);
     }
 
     //retourne les donnéees en liste pour la pagination
@@ -77,7 +81,6 @@ class Article extends React.Component {
     };
 
     renderTableData() {
-
         return this.state.posts.map((post, index) => {
             return (
                 <div className='grid-item' key={index}>
@@ -86,8 +89,6 @@ class Article extends React.Component {
                     <div>Catégorie : {post.catNom}</div>
                     <div>{post.prix.toFixed(2)}€</div>
                 </div>
-                
-
             )
         })
     }
