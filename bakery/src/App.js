@@ -14,7 +14,6 @@ import Panier from "./components/panier/Panier";
 function App() {
   return (
       <React.Fragment>
-
           <Router>
               <NavigationBar />              <Switch>
               <Route path="/contact" component={Contact} />
