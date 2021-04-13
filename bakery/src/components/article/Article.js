@@ -25,11 +25,8 @@ class Article extends React.Component {
 
     recevoirArticle = (article) => {
         localStorage.clear();
-        console.log(article);
         panier.push(article);
-        console.log(panier);
         localStorage.setItem('panier',JSON.stringify(panier));
-        //console.log(localStorage.getItem('panier'));
 
         return(
             <ul>
