@@ -1,53 +1,27 @@
 import React from "react";
-import axios from "axios";
 import ReactPaginate from "react-paginate";
+import Article from "../article/Article";
+import ArticlesListe from "./ArticlesListe";
+import {forEach} from "react-bootstrap/ElementChildren";
 
-class Panier extends React.Component{
-    constructor() {
-        super();
+let panier = [];
+let prixTotal = 0;
+
+class Panier extends React.Component {
+    constructor(props) {
+        super(props);
+
         this.state = {
-            post: [],
+            posts: [],
             offset: 0,
             data: [],
             perPage: 6,
-            currentPage: 0
+            currentPage: 0,
         }
         this.handlePageClick = this
-            .handlePageClick.bind(this);
+            .handlePageClick
+            .bind(this);
     }
-
-    //retourne les donnéees en liste pour la pagination
-    componentDidMount() {
-        function ajouterAuPanier(article) {
-            return function () {
-                console.log("ajout " + article);
-            };
-        }
-
-        axios.get(`http://62.210.130.145:3001/articles`)
-            .then(res => {
-                const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
-                const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
-                const postData = slice.map(pd => <React.Fragment>
-                    <div>
-                        <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                        <div>{pd.nom}</div>
-                        <div>Catégorie : {pd.catNom}</div>
-                        <div>{pd.prix.toFixed(2)}€</div>
-                        <button className={"ajoutAuPanier"} onClick={ajouterAuPanier(pd.id)}>ajout</button>
-                    </div>
-                </React.Fragment>)
-                this.setState({
-                    pageCount: Math.ceil(posts.length / this.state.perPage),
-
-                    postData
-                })
-                this.setState({ posts });
-                console.log(this.state.posts)
-                console.log(this.state.postData)
-            });
-    }
-
 
     handlePageClick = (e) => {
         const selectedPage = e.selected;
@@ -62,25 +36,56 @@ class Panier extends React.Component{
 
     };
 
+    calculerPrixTotal = (prix) =>{
+        prixTotal += prix;
+    }
+
+    LancerCommande = () => {
+        console.log("A faire");
+    }
+
+    panierJSON;
+
+    componentDidMount() {
+        this.panierJSON = localStorage.getItem('panier');
+        panier = JSON.parse(this.panierJSON);
+        console.log("panier", panier);
+
+        const posts = panier.map(obj => ({ id: obj.id, nom: obj.nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
+        const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+        const postData = slice.map(pd => <React.Fragment>
+            {this.calculerPrixTotal(pd.prix)}
+            <div>
+                <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                <div>{pd.nom}</div>
+                <div>{pd.prix.toFixed(2)}€</div>
+            </div>
+        </React.Fragment>)
+
+
+        this.setState({
+            pageCount: Math.ceil(posts.length / this.state.perPage),
+
+            postData
+        })
+        this.setState({ posts });
+        console.log("total", prixTotal);
+    }
+
     render() {
-        return(
+        return (
             <div>
                 <h1>Mon panier</h1>
                 <div className='container'>
                     {this.state.postData}
                 </div>
-                <ReactPaginate
-                    previousLabel={"prev"}
-                    nextLabel={"next"}
-                    breakLabel={"..."}
-                    breakClassName={"break-me"}
-                    pageCount={this.state.pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
-                    onPageChange={this.handlePageClick}
-                    containerClassName={"pagination"}
-                    subContainerClassName={"pages pagination"}
-                    activeClassName={"active"}/>
+                <div className="Total">
+                    Total à payer: {prixTotal}
+                </div>
+                <div>
+                    <button className="lancerCommande" onClick={this.LancerCommande}>Lancer la commande</button>
+                </div>
+
             </div>
         )
     }
