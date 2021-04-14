@@ -1,10 +1,16 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
 import Article from "../article/Article";
+import ArticlesListe from "./ArticlesListe";
+import {forEach} from "react-bootstrap/ElementChildren";
+
+let panier = [];
+let prixTotal = 0;
 
 class Panier extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             posts: [],
             offset: 0,
@@ -29,34 +35,58 @@ class Panier extends React.Component {
         });
 
     };
-    afficherPanier = () => {
-        const panier = localStorage.getItem('panier');
-        console.log(panier);
 
-        const listePanier = panier.map(panier => <React.Fragment>
+    calculerPrixTotal = (prix) =>{
+        prixTotal += prix;
+    }
+
+    LancerCommande = () => {
+        console.log("A faire");
+    }
+
+    panierJSON;
+
+    componentDidMount() {
+        this.panierJSON = localStorage.getItem('panier');
+        panier = JSON.parse(this.panierJSON);
+        console.log("panier", panier);
+
+        const posts = panier.map(obj => ({ id: obj.id, nom: obj.nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
+        const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+        const postData = slice.map(pd => <React.Fragment>
+            {this.calculerPrixTotal(pd.prix)}
             <div>
-                <img className={"image"} src={`data:image/jpeg;base64,${panier.image}`} />
-                <div>{panier.nom}</div>
-                <div>Catégorie : {panier.catNom}</div>
-                <div>{panier.prix.toFixed(2)}€</div>
+                <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                <div>{pd.nom}</div>
+                <div>{pd.prix.toFixed(2)}€</div>
             </div>
-        </React.Fragment>);
-        //this.setState({posts});
-        console.log(this.state.posts)
+        </React.Fragment>)
+
+
+        this.setState({
+            pageCount: Math.ceil(posts.length / this.state.perPage),
+
+            postData
+        })
+        this.setState({ posts });
+        console.log("total", prixTotal);
     }
 
     render() {
-        const panier = localStorage.getItem('panier');
-
         return (
             <div>
-                <h1>Liste des Articles</h1>
+                <h1>Mon panier</h1>
                 <div className='container'>
                     {this.state.postData}
                 </div>
+                <div className="Total">
+                    Total à payer: {prixTotal}
+                </div>
+                <div>
+                    <button className="lancerCommande" onClick={this.LancerCommande}>Lancer la commande</button>
+                </div>
+
             </div>
-
-
         )
     }
 }

@@ -4,9 +4,9 @@ import "./Article.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import ReactPaginate from 'react-paginate';
+import Panier from "../panier/Panier";
 
 const panier = [];
-const visuArticle = true;
 
 class Article extends React.Component {
     constructor(props) {
@@ -25,20 +25,15 @@ class Article extends React.Component {
 
     recevoirArticle = (article) => {
         localStorage.clear();
-        console.log(article);
         panier.push(article);
-        console.log(panier);
-        localStorage.setItem('panier',panier);
-        //console.log(localStorage.getItem('panier'));
-        /*const listePanier = panier.map(panier => <React.Fragment>
-            <div>
-                <img className={"image"} src={`data:image/jpeg;base64,${panier.image}`} />
-                <div>{panier.nom}</div>
-                <div>Catégorie : {panier.catNom}</div>
-                <div>{panier.prix.toFixed(2)}€</div>
-            </div>
-        </React.Fragment>);
-         */
+        localStorage.setItem('panier',JSON.stringify(panier));
+
+        return(
+            <ul>
+                <h3>Mon Panier</h3>
+                <Panier monPanier={panier}/>
+            </ul>
+        )
     }
 
     //retourne les donnéees en liste pour la pagination
@@ -65,8 +60,8 @@ class Article extends React.Component {
                     postData
                 })
                 this.setState({ posts });
-                console.log(this.state.posts)
-                console.log(this.state.postData)
+                console.log("posts",this.state.posts)
+                console.log("postData",this.state.postData)
             });
     }
 
