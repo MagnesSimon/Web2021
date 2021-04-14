@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 class Connexion extends React.Component{
 
@@ -9,7 +10,7 @@ class Connexion extends React.Component{
             posts : [],
             mail : '',
             mdp : '',
-
+            connecté : false
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -21,6 +22,7 @@ class Connexion extends React.Component{
         })
     }
 
+
     seConnecter = () =>{
         axios.get('http://62.210.130.145:3001/user')
         .then(res =>{
@@ -28,9 +30,16 @@ class Connexion extends React.Component{
             console.log(posts)
             posts.find((post)=>{
                 if(this.state.mail == post.mail && this.state.mdp == post.mdp){
-                    console.log("Bonjour vous etes connecté")
+                    this.state.connecté = true
+                    if(window.confirm("Connexion...")){
+                       window.open("http://localhost:3000/")
+                    }
+                    
                 }
             })
+            if(this.state.connecté === false){
+                alert("Mauvaise adresse Email/mauvais mot de passe.")
+            }
         })
         .catch(error => {
             console.log(error)
