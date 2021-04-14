@@ -2,6 +2,7 @@ import React from "react";
 import banniere from "../../boulangerie/banniere.jpg";
 import axios from "axios";
 import "./Inscription.css";
+import  { Redirect } from 'react-router-dom';
 
 class Inscription extends React.Component {
 
@@ -16,7 +17,6 @@ class Inscription extends React.Component {
             confmdp : '',
             mailValide : false,
             mdpValide : false,
-            mailExiste : true
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -39,12 +39,15 @@ class Inscription extends React.Component {
                 axios.post('http://62.210.130.145:3001/user', this.state)
                 .then(response => {
                     console.log(response)
+                    alert("Votre inscription est validée.")
+                    this.props.history.push('/connexion')
                 })
                 .catch(error => {
-                    console.log(error)
+                    alert("Mail deja existant")
                 })
         }
         console.log(this.state.mailValide,this.state.mdpValide)
+        
     }
 
     validationemail = () => {
@@ -68,25 +71,7 @@ class Inscription extends React.Component {
         }
     }
 
-    verifMail = () =>{
-        axios.get('http://62.210.130.145:3001/user')
-        .then(res =>{
-            const dede = res.data.map(obj => ({id : obj.id, nom : obj.nom, prenom: obj.prenom , mail : obj.mail,tel : obj.tel, mdp : obj.mdp}))
-            console.log(dede)
-            dede.find((post)=>{
-                if(this.state.mail == post.mail){
-                    this.state.mailExiste = false;
-                    console.log("Adresse mail deja existante.")
-                }
-            })
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
-
-
-
+    
     render () {
         return <form onSubmit={this.submitHandler}>
             <div>
