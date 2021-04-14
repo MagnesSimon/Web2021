@@ -31,9 +31,10 @@ class Connexion extends React.Component{
             posts.find((post)=>{
                 if(this.state.mail == post.mail && this.state.mdp == post.mdp){
                     this.state.connecté = true
-                    if(window.confirm("Connexion...")){
-                       window.open("http://localhost:3000/")
-                    }
+                    console.log(post.id);
+                    localStorage.setItem("user",JSON.stringify(post));
+                    console.log(localStorage.getItem("user"));
+                    //this.props.history.push('/home')
                     
                 }
             })
