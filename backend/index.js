@@ -1,6 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors")
+const nodemailer = require('nodemailer');
+const creds = require('./config/mail.config.js');
+
+var supportRouter = require('./routes/contact.route');
 
 const app = express();
 
@@ -14,6 +18,9 @@ app.use( bodyParser.json() )
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         next();
     });
+
+    app.use('/send', supportRouter);
+
 
 app.get("/", (req, res) => {
     res.json("Bienvenue dans l'API de la boulangerie Lonbois.");
