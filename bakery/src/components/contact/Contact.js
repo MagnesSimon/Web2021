@@ -4,10 +4,6 @@ export class Contact extends React.Component{
 
     constructor(props) {
       super(props)
-
-      this.state = {
-        showMessage: false
-      }
     }
 
 
@@ -29,21 +25,6 @@ export class Contact extends React.Component{
         })
     }
 
-
-    
-    onButtonClickHandler = () => {
-
-        this.setState({showMessage: true});
-
-        setTimeout(() => {
-            this.setState({showMessage: false});
-        }, 2000);
-    
-       }
-
-    
-     
-
     resetForm(){
         document.getElementById('contact-form').reset();
     }
@@ -53,7 +34,7 @@ export class Contact extends React.Component{
             <>
                     <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
                         <div className="form-group">
-                            <input type="text"placeholder={'Pseudo'} className={'border- bg-- border-none pl-2'} id="name" />
+                            <input type="text"placeholder={'Nom et prénom'} className={'border- bg-- border-none pl-2'} id="name" />
                         </div>
                         <div className="form-group">
                             <input type="email"placeholder={'Mail'} className={'border- bg-- border-none pl-2'} id="email" aria-describedby="emailHelp" />
@@ -61,13 +42,8 @@ export class Contact extends React.Component{
                         <div className="form-group">
                             <textarea placeholder={'Message'}className={'border- bg-- border-none pl-2'} rows="5" id="message"/>
                         </div>
-                        <button type="submit" className={'border- bg color ml-3 shd-- border-none mt-3 p-1'}>Submit</button>
+                        <button type="submit" className={'border- bg color ml-3 shd-- border-none mt-3 p-1'}>Envoyer</button>
                     </form>
-
-                    <div className="App">
-     {this.state.showMessage && <p>Hi</p>}
-      <button onClick={this.onButtonClickHandler}>Enter</button>
-    </div>
             </>
 
         );
