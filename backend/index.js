@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
 
 require("./routes/article.route.js")(app);
 require("./routes/user.route.js")(app);
+require("./routes/commande.route.js")(app);
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001.");

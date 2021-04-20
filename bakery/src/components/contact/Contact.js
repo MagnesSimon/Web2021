@@ -4,6 +4,10 @@ export class Contact extends React.Component{
 
     constructor(props) {
       super(props)
+
+      this.state = {
+        showMessage: false
+      }
     }
 
 
@@ -25,6 +29,21 @@ export class Contact extends React.Component{
         })
     }
 
+
+    
+    onButtonClickHandler = () => {
+
+        this.setState({showMessage: true});
+
+        setTimeout(() => {
+            this.setState({showMessage: false});
+        }, 2000);
+    
+       }
+
+    
+     
+
     resetForm(){
         document.getElementById('contact-form').reset();
     }
@@ -44,6 +63,11 @@ export class Contact extends React.Component{
                         </div>
                         <button type="submit" className={'border- bg color ml-3 shd-- border-none mt-3 p-1'}>Submit</button>
                     </form>
+
+                    <div className="App">
+     {this.state.showMessage && <p>Hi</p>}
+      <button onClick={this.onButtonClickHandler}>Enter</button>
+    </div>
             </>
 
         );
