@@ -6,6 +6,7 @@ import {forEach} from "react-bootstrap/ElementChildren";
 
 let panier = [];
 let prixTotal = 0;
+let arrayId = [];
 
 class Panier extends React.Component {
     constructor(props) {
@@ -43,8 +44,20 @@ class Panier extends React.Component {
     LancerCommande = () => {
         console.log("A faire");
     }
+    retirerPanier = (id) => {
+        console.log("panier: ", panier);
+        panier.splice(id -1, 1);
+        localStorage.clear();
+        localStorage.setItem('panier', JSON.stringify(panier));
+        this.panierJSON = localStorage.getItem('panier');
+        panier = JSON.parse(this.panierJSON);
+        console.log("panier 2: ", panier);
+    }
 
-    panierJSON;
+    ajouterArrayId = (id) => {
+        arrayId.push(id - 1);
+    }
+
 
     componentDidMount() {
         this.panierJSON = localStorage.getItem('panier');
@@ -55,10 +68,12 @@ class Panier extends React.Component {
         const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
         const postData = slice.map(pd => <React.Fragment>
             {this.calculerPrixTotal(pd.prix)}
+            {this.ajouterArrayId(pd.id)}
             <div>
                 <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
                 <div>{pd.nom}</div>
                 <div>{pd.prix.toFixed(2)}€</div>
+                <button onClick={() => this.retirerPanier(pd.id)}>Retirer du panier</button>
             </div>
         </React.Fragment>)
 
@@ -80,7 +95,7 @@ class Panier extends React.Component {
                     {this.state.postData}
                 </div>
                 <div className="Total">
-                    Total à payer: {prixTotal}
+                    Total à payer: {prixTotal.toFixed(2)}
                 </div>
                 <div>
                     <button className="lancerCommande" onClick={this.LancerCommande}>Lancer la commande</button>
