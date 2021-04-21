@@ -12,6 +12,7 @@ class Article extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            showMessage : false,
             posts: [],
             offset: 0,
             data: [],
@@ -27,6 +28,12 @@ class Article extends React.Component {
         localStorage.clear();
         panier.push(article);
         localStorage.setItem('panier',JSON.stringify(panier));
+        // Message de validation
+        this.setState({showMessage : true});
+        setTimeout(() => {
+            this.setState({showMessage: false});
+        },2000);
+
 
         return(
             <ul>
@@ -34,6 +41,9 @@ class Article extends React.Component {
                 <Panier monPanier={panier}/>
             </ul>
         )
+    }
+    onButtonClickHandler =() => {
+
     }
 
     //retourne les donnéees en liste pour la pagination
@@ -48,8 +58,11 @@ class Article extends React.Component {
                         <div>{pd.nom}</div>
                         <div>Catégorie : {pd.catNom}</div>
                         <div>{pd.prix.toFixed(2)}€</div>
-                        <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle(pd)}>
-                            panier</button>
+                        <div>
+                            {this.state.showMessage && <p>Article ajouté avec succès</p>}
+                            <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle(pd)}>
+                                Ajouter au panier</button>
+                        </div>
                     </div>
                 </React.Fragment>)
 
@@ -85,6 +98,7 @@ class Article extends React.Component {
                 <h1>Liste des Articles</h1>
                 <div className='container'>
                 {this.state.postData}
+                {this.state.showMessage && <p>Article ajouté avec succès</p>}
                 </div>
                 <ReactPaginate
                     previousLabel={"prev"}
