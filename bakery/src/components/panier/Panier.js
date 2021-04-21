@@ -45,7 +45,7 @@ class Panier extends React.Component {
         console.log("A faire");
     }
     retirerPanier = (id) => {
-        console.log("panier: ", panier);
+        console.log("panier: ", panier, "id", id);
         panier.splice(id -1, 1);
         localStorage.clear();
         localStorage.setItem('panier', JSON.stringify(panier));
