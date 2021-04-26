@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Article.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '../../global.js'
 
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
@@ -16,8 +17,9 @@ class Article extends React.Component {
             posts: [],
             offset: 0,
             data: [],
-            perPage: 6,
+            perPage: 9,
             currentPage: 0,
+            categorie: "",
         }
         this.handlePageClick = this
             .handlePageClick
@@ -48,7 +50,7 @@ class Article extends React.Component {
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
-        axios.get(`http://62.210.130.145:3001/articles`)
+        axios.get(window.url + `/articles`)
             .then(res => {
                 const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
                 const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
@@ -60,7 +62,7 @@ class Article extends React.Component {
                         <div>{pd.prix.toFixed(2)}€</div>
                         <div>
                             {this.state.showMessage && <p>Article ajouté avec succès</p>}
-                            <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle(pd)}>
+                            <button class='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
                                 Ajouter au panier</button>
                         </div>
                     </div>

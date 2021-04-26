@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import '../../global.js'
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 class Connexion extends React.Component{
@@ -24,7 +25,7 @@ class Connexion extends React.Component{
 
 
     seConnecter = () =>{
-        axios.get('http://62.210.130.145:3001/user')
+        axios.get(window.url + '/user')
         .then(res =>{
             const posts = res.data.map(obj => ({id : obj.id, nom : obj.nom, prenom: obj.prenom , mail : obj.mail,tel : obj.tel, mdp : obj.mdp}))
             console.log(posts)
@@ -60,7 +61,7 @@ class Connexion extends React.Component{
                     <input type="password" id="mdp" name="mdp" value={this.state.mdp} onChange={this.handleChange} required/>
                 </div>
                 <div>
-                    <button id="connection" name="connection" onClick={this.seConnecter}>Se connecter</button>
+                    <button class='btn btn-primary' id="connection" name="connection" onClick={this.seConnecter}>Se connecter</button>
                 </div>
             </div>
     }
