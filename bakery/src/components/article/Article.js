@@ -32,7 +32,7 @@ class Article extends React.Component {
         axios.get(window.url + `/articles`)
         .then(res => {
             let filter;
-            if(e.target.value == 'Tout'){
+            if(e == undefined || e.target.value == 'Tout'){
                 filter = res.data
             }
             else{
@@ -59,7 +59,7 @@ class Article extends React.Component {
 
             this.setState({
                 pageCount: Math.ceil(posts.length / this.state.perPage),
-               
+               offset:1,
                 postData
             })
             this.setState({ posts });
@@ -113,7 +113,6 @@ class Article extends React.Component {
 
                 this.setState({
                     pageCount: Math.ceil(posts.length / this.state.perPage),
-                   
                     postData
                 })
                 this.setState({ posts });
@@ -129,7 +128,7 @@ class Article extends React.Component {
             currentPage: selectedPage,
             offset: offset
         }, () => {
-            this.componentDidMount()
+            this.onChangeValue()
         });
 
     };
