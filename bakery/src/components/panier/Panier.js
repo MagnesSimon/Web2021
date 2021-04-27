@@ -65,32 +65,36 @@ class Panier extends React.Component {
         this.state.panier = JSON.parse(this.panierJSON);
         console.log("panier", this.state.panier);
         try {
-             const posts = this.state.panier.map(obj => ({ id: obj.id, nom: obj.nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));;
-             this.setState(posts);
+            const posts = this.state.panier.map(obj => ({
+                id: obj.id,
+                nom: obj.nom,
+                prix: obj.prix,
+                catNom: obj.catNom,
+                image: obj.image
+            }));
+            const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+            const postData = slice.map(pd => <React.Fragment>
+                {this.calculerPrixTotal(pd.prix)}
+                {this.ajouterArrayId(pd.id)}
+                <div>
+                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                    <div>{pd.nom}</div>
+                    <div>{pd.prix.toFixed(2)}€</div>
+                    <button onClick={() => this.retirerPanier(pd.id)}>Retirer du panier</button>
+                </div>
+            </React.Fragment>)
+
+
+            this.setState({
+                pageCount: Math.ceil(posts.length / this.state.perPage),
+
+                postData
+            })
+            this.setState({ posts });
+            console.log("total", prixTotal);
         } catch (error) {
             console.log("panier vide");
         }
-
-        const slice = this.state.posts.slice(this.state.offset, this.state.offset + this.state.perPage)
-        const postData = slice.map(pd => <React.Fragment>
-            {this.calculerPrixTotal(pd.prix)}
-            {this.ajouterArrayId(pd.id)}
-            <div>
-                <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                <div>{pd.nom}</div>
-                <div>{pd.prix.toFixed(2)}€</div>
-                <button onClick={() => this.retirerPanier(pd.id)}>Retirer du panier</button>
-            </div>
-        </React.Fragment>)
-
-
-        this.setState({
-            pageCount: Math.ceil(this.state.posts.length / this.state.perPage),
-
-            postData
-        })
-            //this.setState({ posts });
-        console.log("total", prixTotal);
     }
 
     render() {
