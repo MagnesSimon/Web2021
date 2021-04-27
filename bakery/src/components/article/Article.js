@@ -20,7 +20,8 @@ class Article extends React.Component {
             perPage: 9,
             currentPage: 0,
             categorie: "",
-            filter:[]
+            filter:[],
+            value: "Tout"
         }
         this.onChangeValue = this.onChangeValue.bind(this);
         this.handlePageClick = this
@@ -29,43 +30,10 @@ class Article extends React.Component {
     }
 
     onChangeValue(e) {
-        axios.get(window.url + `/articles`)
-        .then(res => {
-            let filter;
-            if(e == undefined || e.target.value == 'Tout'){
-                filter = res.data
-            }
-            else{
-                filter = res.data.filter( x => x.catNom == e.target.value)
-            }
-            const posts = filter.map(obj => 
-                ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image })
-                );
-            const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
-            const postData = slice.map(pd => <React.Fragment>
-                <div>
-                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                    <div>{pd.nom}</div>
-                    <div>Catégorie : {pd.catNom}</div>
-                    <div>{pd.prix.toFixed(2)}€</div>
-                    <div>
-                        {this.state.showMessage && <p>Article ajouté avec succès</p>}
-                        <button className='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
-                            Ajouter au panier</button>
-                    </div>
-                </div>
-            </React.Fragment>)
-
-
-            this.setState({
-                pageCount: Math.ceil(posts.length / this.state.perPage),
-               offset:1,
-                postData
-            })
-            this.setState({ posts });
-            this.setState({filter});
-        });
-        
+        this.setState(
+            {value: e.target.value}
+        )
+        this.componentDidMount()
       }
 
     recevoirArticle = (article) => {
@@ -93,30 +61,42 @@ class Article extends React.Component {
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
         axios.get(window.url + `/articles`)
-            .then(res => {
-                const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
-                const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
-                const postData = slice.map(pd => <React.Fragment>
+        .then(res => {
+            let filter;
+            if(this.state.value == 'Tout'){
+                filter = res.data
+            }
+            else{
+                filter = res.data.filter( x => x.catNom == this.state.value)
+            }
+            const posts = filter.map(obj => 
+                ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image })
+                );
+            const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+            const postData = slice.map(pd => <React.Fragment>
+                <div>
+                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                    <div>{pd.nom}</div>
+                    <div>Catégorie : {pd.catNom}</div>
+                    <div>{pd.prix.toFixed(2)}€</div>
                     <div>
-                        <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                        <div>{pd.nom}</div>
-                        <div>Catégorie : {pd.catNom}</div>
-                        <div>{pd.prix.toFixed(2)}€</div>
-                        <div>
-                            {this.state.showMessage && <p>Article ajouté avec succès</p>}
-                            <button className='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
-                                Ajouter au panier</button>
-                        </div>
+                        {this.state.showMessage && <p>Article ajouté avec succès</p>}
+                        <button className='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
+                            Ajouter au panier</button>
                     </div>
-                </React.Fragment>)
+                </div>
+            </React.Fragment>)
 
 
-                this.setState({
-                    pageCount: Math.ceil(posts.length / this.state.perPage),
-                    postData
-                })
-                this.setState({ posts });
-            });
+            this.setState({
+                pageCount: Math.ceil(posts.length / this.state.perPage),
+                
+                postData
+            })
+            this.setState({ posts });
+            this.setState({filter});
+        });
+        
     }
 
 
@@ -128,7 +108,7 @@ class Article extends React.Component {
             currentPage: selectedPage,
             offset: offset
         }, () => {
-            this.onChangeValue()
+            this.componentDidMount()
         });
 
     };
