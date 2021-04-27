@@ -4,7 +4,7 @@ import Article from "../article/Article";
 import ArticlesListe from "./ArticlesListe";
 import {forEach} from "react-bootstrap/ElementChildren";
 
-let panier = [];
+
 let prixTotal = 0;
 let arrayId = [];
 
@@ -18,6 +18,7 @@ class Panier extends React.Component {
             data: [],
             perPage: 6,
             currentPage: 0,
+            panier: [],
         }
         this.handlePageClick = this
             .handlePageClick
@@ -45,13 +46,13 @@ class Panier extends React.Component {
         console.log("A faire");
     }
     retirerPanier = (id) => {
-        console.log("panier: ", panier, "id", id);
-        panier.splice(id -1, 1);
+        console.log("panier: ", this.state.panier, "id", id);
+        this.state.panier.splice(id -1, 1);
         localStorage.clear();
-        localStorage.setItem('panier', JSON.stringify(panier));
+        localStorage.setItem('panier', JSON.stringify(this.state.panier));
         this.panierJSON = localStorage.getItem('panier');
-        panier = JSON.parse(this.panierJSON);
-        console.log("panier 2: ", panier);
+        this.state.panier = JSON.parse(this.panierJSON);
+        console.log("panier 2: ", this.state.panier);
     }
 
     ajouterArrayId = (id) => {
@@ -61,11 +62,16 @@ class Panier extends React.Component {
 
     componentDidMount() {
         this.panierJSON = localStorage.getItem('panier');
-        panier = JSON.parse(this.panierJSON);
-        console.log("panier", panier);
+        this.state.panier = JSON.parse(this.panierJSON);
+        console.log("panier", this.state.panier);
+        try {
+             const posts = this.state.panier.map(obj => ({ id: obj.id, nom: obj.nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));;
+             this.setState(posts);
+        } catch (error) {
+            console.log("panier vide");
+        }
 
-        const posts = panier.map(obj => ({ id: obj.id, nom: obj.nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
-        const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+        const slice = this.state.posts.slice(this.state.offset, this.state.offset + this.state.perPage)
         const postData = slice.map(pd => <React.Fragment>
             {this.calculerPrixTotal(pd.prix)}
             {this.ajouterArrayId(pd.id)}
@@ -79,11 +85,11 @@ class Panier extends React.Component {
 
 
         this.setState({
-            pageCount: Math.ceil(posts.length / this.state.perPage),
+            pageCount: Math.ceil(this.state.posts.length / this.state.perPage),
 
             postData
         })
-        this.setState({ posts });
+            //this.setState({ posts });
         console.log("total", prixTotal);
     }
 
