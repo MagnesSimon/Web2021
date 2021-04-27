@@ -46,30 +46,23 @@ class Panier extends React.Component {
         console.log("A faire");
     }
     retirerPanier = (id) => {
-        console.log("panier: ", this.state.panier);
-        console.log("id", id)
-        this.state.panier.remove();
-        //this.state.panier.splice(id, 1);
+        this.state.posts.splice(id, 1);
         localStorage.removeItem('panier');
-        localStorage.setItem('panier', JSON.stringify(this.state.panier));
+        localStorage.setItem('panier', JSON.stringify(this.state.posts));
         this.panierJSON = localStorage.getItem('panier');
-        this.state.panier = JSON.parse(this.panierJSON);
-        console.log("panier 2: ", this.state.panier);
+        this.state.posts = JSON.parse(this.panierJSON);
 
+        this.componentDidMount();
     }
-
-    ajouterArrayId = (id) => {
-        arrayId.push(id);
-        console.log("arrayID", arrayId);
-    }
-
 
     componentDidMount() {
         this.panierJSON = localStorage.getItem('panier');
         this.state.panier = JSON.parse(this.panierJSON);
-        console.log("panier", this.state.panier);
+        //console.log("panier 3", this.state.panier);
+        let i =0;
         try {
             const posts = this.state.panier.map(obj => ({
+                panierId: i++,
                 id: obj.id,
                 nom: obj.nom,
                 prix: obj.prix,
@@ -79,12 +72,11 @@ class Panier extends React.Component {
             const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
             const postData = slice.map(pd => <React.Fragment>
                 {this.calculerPrixTotal(pd.prix)}
-                {this.ajouterArrayId(pd.id)}
                 <div>
                     <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
                     <div>{pd.nom}</div>
                     <div>{pd.prix.toFixed(2)}€</div>
-                    <button className={"no"} onClick={() => this.retirerPanier(pd.id)}>Retirer du panier</button>
+                    <button className={"no"} onClick={() => this.retirerPanier(pd.panierId)}>Retirer du panier</button>
                 </div>
             </React.Fragment>)
 
