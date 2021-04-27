@@ -20,11 +20,53 @@ class Article extends React.Component {
             perPage: 9,
             currentPage: 0,
             categorie: "",
+            filter:[]
         }
+        this.onChangeValue = this.onChangeValue.bind(this);
         this.handlePageClick = this
             .handlePageClick
             .bind(this);
     }
+
+    onChangeValue(e) {
+        axios.get(window.url + `/articles`)
+        .then(res => {
+            let filter;
+            if(e.target.value == 'Tout'){
+                filter = res.data
+            }
+            else{
+                filter = res.data.filter( x => x.catNom == e.target.value)
+            }
+            const posts = filter.map(obj => 
+                ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image })
+                );
+            const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+            const postData = slice.map(pd => <React.Fragment>
+                <div>
+                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                    <div>{pd.nom}</div>
+                    <div>Catégorie : {pd.catNom}</div>
+                    <div>{pd.prix.toFixed(2)}€</div>
+                    <div>
+                        {this.state.showMessage && <p>Article ajouté avec succès</p>}
+                        <button className='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
+                            Ajouter au panier</button>
+                    </div>
+                </div>
+            </React.Fragment>)
+
+
+            this.setState({
+                pageCount: Math.ceil(posts.length / this.state.perPage),
+               
+                postData
+            })
+            this.setState({ posts });
+            this.setState({filter});
+        });
+        
+      }
 
     recevoirArticle = (article) => {
         localStorage.clear();
@@ -62,7 +104,7 @@ class Article extends React.Component {
                         <div>{pd.prix.toFixed(2)}€</div>
                         <div>
                             {this.state.showMessage && <p>Article ajouté avec succès</p>}
-                            <button class='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
+                            <button className='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
                                 Ajouter au panier</button>
                         </div>
                     </div>
@@ -75,8 +117,6 @@ class Article extends React.Component {
                     postData
                 })
                 this.setState({ posts });
-                console.log("posts",this.state.posts)
-                console.log("postData",this.state.postData)
             });
     }
 
@@ -98,6 +138,12 @@ class Article extends React.Component {
         return (
             <div>
                 <h1>Liste des Articles</h1>
+                <div onChange={this.onChangeValue}>
+                <input type="radio" value="Tout" name='categorie'/> Tout
+        <input type="radio" value="viennoiserie" name='categorie'/> Viennoiserie
+        <input type="radio" value="pain" name='categorie'/> Pain
+        <input type="radio" value="pâtisserie" name='categorie'/> Pâtisserie
+      </div>
                 <div className='container'>
                 {this.state.postData}
                 {this.state.showMessage && <p>Article ajouté avec succès</p>}

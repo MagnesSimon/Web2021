@@ -20,7 +20,7 @@ const Horaire = ({element}) => {
                     </tr>
                     <tr>
                         <td className="ligne-impaire">Jeudi</td>
-                        <td className="ligne-impaire">06:00 - 18:00</td>
+                        <td className='text-center'>fermé</td>
                     </tr>
                     <tr>
                         <td>Vendredi</td>
