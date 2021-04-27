@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Article.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '../../global.js'
 
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
@@ -16,13 +17,24 @@ class Article extends React.Component {
             posts: [],
             offset: 0,
             data: [],
-            perPage: 6,
+            perPage: 9,
             currentPage: 0,
+            categorie: "",
+            filter:[],
+            value: "Tout"
         }
+        this.onChangeValue = this.onChangeValue.bind(this);
         this.handlePageClick = this
             .handlePageClick
             .bind(this);
     }
+
+    onChangeValue(e) {
+        this.setState(
+            {value: e.target.value}
+        )
+        this.componentDidMount()
+      }
 
     recevoirArticle = (article) => {
         localStorage.clear();
@@ -48,34 +60,43 @@ class Article extends React.Component {
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
-        axios.get(`http://62.210.130.145:3001/articles`)
-            .then(res => {
-                const posts = res.data.map(obj => ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image }));
-                const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
-                const postData = slice.map(pd => <React.Fragment>
+        axios.get(window.url + `/articles`)
+        .then(res => {
+            let filter;
+            if(this.state.value == 'Tout'){
+                filter = res.data
+            }
+            else{
+                filter = res.data.filter( x => x.catNom == this.state.value)
+            }
+            const posts = filter.map(obj => 
+                ({ id: obj.art_id, nom: obj.art_nom, prix: obj.prix, catNom: obj.catNom, image: obj.image })
+                );
+            const slice = posts.slice(this.state.offset, this.state.offset + this.state.perPage)
+            const postData = slice.map(pd => <React.Fragment>
+                <div>
+                    <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
+                    <div>{pd.nom}</div>
+                    <div>Catégorie : {pd.catNom}</div>
+                    <div>{pd.prix.toFixed(2)}€</div>
                     <div>
-                        <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
-                        <div>{pd.nom}</div>
-                        <div>Catégorie : {pd.catNom}</div>
-                        <div>{pd.prix.toFixed(2)}€</div>
-                        <div>
-                            {this.state.showMessage && <p>Article ajouté avec succès</p>}
-                            <button className={"ajoutAuPanier"} onClick={() => this.recevoirArticle(pd)}>
-                                Ajouter au panier</button>
-                        </div>
+                        {this.state.showMessage && <p>Article ajouté avec succès</p>}
+                        <button className='btn btn-info' onClick={() => this.recevoirArticle(pd)}>
+                            Ajouter au panier</button>
                     </div>
-                </React.Fragment>)
+                </div>
+            </React.Fragment>)
 
 
-                this.setState({
-                    pageCount: Math.ceil(posts.length / this.state.perPage),
-                   
-                    postData
-                })
-                this.setState({ posts });
-                console.log("posts",this.state.posts)
-                console.log("postData",this.state.postData)
-            });
+            this.setState({
+                pageCount: Math.ceil(posts.length / this.state.perPage),
+                
+                postData
+            })
+            this.setState({ posts });
+            this.setState({filter});
+        });
+        
     }
 
 
@@ -96,6 +117,12 @@ class Article extends React.Component {
         return (
             <div>
                 <h1>Liste des Articles</h1>
+                <div onChange={this.onChangeValue}>
+                <input type="radio" value="Tout" name='categorie'/> Tout
+        <input type="radio" value="viennoiserie" name='categorie'/> Viennoiserie
+        <input type="radio" value="pain" name='categorie'/> Pain
+        <input type="radio" value="pâtisserie" name='categorie'/> Pâtisserie
+      </div>
                 <div className='container'>
                 {this.state.postData}
                 {this.state.showMessage && <p>Article ajouté avec succès</p>}

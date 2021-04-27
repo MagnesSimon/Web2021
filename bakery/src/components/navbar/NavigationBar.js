@@ -1,7 +1,9 @@
 import React from 'react';
-import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
+import { Nav, Navbar, Form, FormControl , NavbarBrand} from 'react-bootstrap';
 import styled from 'styled-components';
 import useSticky from "../hooks/useSticky";
+import logo from "../../boulangerie/logo.jpg";
+import "./Navbar.css"
 
 const Styles = styled.div`
   .navbar { background-color: #ffa701; }
@@ -10,7 +12,7 @@ const Styles = styled.div`
     &:hover { color: white; }
   }
   .navbar-brand {
-    font-size: 1.4em;
+    font-size: 1,4em;
     color: #000000;
     &:hover { color: white; }
   }
@@ -26,6 +28,7 @@ export const NavigationBar = ({ sticky }) => (
             {/*{sticky ? "navbar navbar-sticky" : "navbar"}*/}
             {/*<Navbar.Brand href="/">Tutorial</Navbar.Brand>*/}
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+            <NavbarBrand><a href='/'><img className='logo' src={logo} /></a></NavbarBrand>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="m-md-auto">
                     <Nav.Item><Nav.Link href="/">|   Home     </Nav.Link></Nav.Item>

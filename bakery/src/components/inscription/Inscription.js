@@ -2,6 +2,7 @@ import React from "react";
 import banniere from "../../boulangerie/banniere.jpg";
 import axios from "axios";
 import "./Inscription.css";
+import '../../global.js'
 import  { Redirect } from 'react-router-dom';
 
 class Inscription extends React.Component {
@@ -36,7 +37,7 @@ class Inscription extends React.Component {
         console.log(this.state)
         if(this.state.mailValide == true && this.state.mdpValide == true){
                 console.log(this.state.mailValide,this.state.mdpValide)
-                axios.post('http://62.210.130.145:3001/user', this.state)
+                axios.post(window.url + '/user', this.state)
                 .then(response => {
                     console.log(response)
                     alert("Votre inscription est validée.")
