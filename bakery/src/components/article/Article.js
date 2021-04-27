@@ -3,6 +3,8 @@ import axios from "axios";
 import "./Article.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../global.js'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
@@ -41,10 +43,7 @@ class Article extends React.Component {
         panier.push(article);
         localStorage.setItem('panier',JSON.stringify(panier));
         // Message de validation
-        this.setState({showMessage : true});
-        setTimeout(() => {
-            this.setState({showMessage: false});
-        },2000);
+        toast('Articles ajouté dans le panier !')
 
 
         return(
@@ -116,6 +115,7 @@ class Article extends React.Component {
     render() {
         return (
             <div>
+                <ToastContainer />
                 <h1>Liste des Articles</h1>
                 <div onChange={this.onChangeValue}>
                 <input type="radio" value="Tout" name='categorie'/> Tout
