@@ -1,0 +1,17 @@
+.row-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;/* ou between selon le cas*/
+}
+
+.column-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contact{
+
+    width: 50vw;
+
+}
