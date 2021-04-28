@@ -1,11 +1,12 @@
 .App-banniere {
   width: 100%;
 }
-h1 {
+.h1 {
   color: #33484b;
   font: 46px, Catamaran, sans-serif;
   font-weight: bold;
   padding-top: 15px;
+  text-align: center;
 }
 
 .bloc {
