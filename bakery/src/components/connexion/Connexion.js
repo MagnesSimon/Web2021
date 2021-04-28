@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import '../../global.js'
+import { Form, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 class Connexion extends React.Component{
@@ -50,9 +51,12 @@ class Connexion extends React.Component{
 
 
     render (){
-        return <div>
+        return <div className={'row-wrapper'}>
+                <div className="column-wrapper contact">
+
+
                 <h2>Se connecter</h2>
-                <div>
+                <div id="contact-form">
                     <label htmlFor="Mail">E-mail :</label>
                     <input type="texte" id="mail" name="mail" value={this.state.mail} onChange={this.handleChange} required/>
                 </div>
@@ -62,6 +66,7 @@ class Connexion extends React.Component{
                 </div>
                 <div>
                     <button class='btn btn-primary' id="connection" name="connection" onClick={this.seConnecter}>Se connecter</button>
+                </div>
                 </div>
             </div>
     }
