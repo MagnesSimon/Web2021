@@ -1,4 +1,39 @@
-.App-banniere {
+body{
+  background-color: var(--black-burgundy);
+  color: var(--ivory);
+}
+
+h1 {
+  color:var(--maize-crayola);
+}
+
+.horraire{
+
+  background-color: var(--columbia-blue);
+  color: var(--black-burgundy);
+}
+
+#title-row{
+  height: 15vh;
+  /* background-image: url("./imageTitle.jpg"); */
+}
+
+
+.row-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;/* ou between selon le cas*/
+}
+
+.column-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* .App-banniere {
   width: 100%;
 }
 .h1 {
@@ -42,4 +77,4 @@
   .tableau-horaire {
       left: 15%
   }
-}
+} */
