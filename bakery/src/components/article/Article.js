@@ -131,10 +131,6 @@ class Article extends React.Component {
                 {this.state.postData}
                 {this.state.showMessage && <p>Article ajouté avec succès</p>}
                 </div>
-                <div>
-                    <button onClick={() => this.testConnexion()}>test connexion</button>
-                    <button onClick={() => this.finConnexion()}>fin connexion</button>
-                </div>
                 <ReactPaginate
                     previousLabel={"prev"}
                     nextLabel={"next"}
@@ -149,20 +145,6 @@ class Article extends React.Component {
                     activeClassName={"active"}/>
             </div>
         )
-    }
-
-    testConnexion() {
-        if ( localStorage.getItem('user')) {
-            console.log("y a un user", localStorage.getItem('user'));
-        }
-        else {
-            console.log("pas de user");
-        }
-    }
-    finConnexion(){
-        localStorage.removeItem('user');
-        console.log("deco");
-        window.location.reload(false);
     }
 }
 
