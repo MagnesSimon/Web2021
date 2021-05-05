@@ -11,6 +11,7 @@ import pain3 from '../../boulangerie/pain3.jpg'
 
 const Accueil = ({element}) => {
     return(
+
         <>
             <div id="title-row" className="row-wrapper">
                 <div className="column-wrapper ">
@@ -35,7 +36,18 @@ const Accueil = ({element}) => {
             </div>
             <div className={"row-wrapper row3 mb-4"}>
                 <div className={"column-wrapper w-50"}>
-                    Le pétrissage, la fermentation, la mise en forme et la cuisson complète des pains sont fait sur place.
+
+        <div>
+            <h1 classname="h1"> Boulangerie Lonbois de Braine l'Alleud</h1>
+                <img src={banniere} className="App-banniere" alt="banniere" />
+                <div className='bloc'>
+                    <span>Boulangie - </span>
+                    <span>Pâtisserie - </span>
+                    <span>Sandwicherie</span>
+                </div>
+                <p className="descriptif">Produits frais, fabriqués dans nos ateliers à Braine l'Alleud avec des œufs frais, du vrai beurre et sans huile de palme.
+                    Tous nos produits sont fabriqués dans nos ateliers, situés sur la Drève Richelle à Waterloo.
+                    Le pétrissage, la fermentation, la mise en forme et la cuisson complète des pains sont fait sur place.</p>
                 </div>
                 <div className={"column-wrapper w-50 h-50"}>
                     <Image src={pain3} alt="pain3" fluid></Image>
@@ -51,10 +63,9 @@ const Accueil = ({element}) => {
                 </div>
             </div>
 
-
-
+            </div>
         </>
     )
-}
 
+}
 export default Accueil

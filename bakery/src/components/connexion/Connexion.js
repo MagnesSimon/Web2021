@@ -65,7 +65,7 @@ class Connexion extends React.Component{
                     <input type="password" id="mdp" name="mdp" value={this.state.mdp} onChange={this.handleChange} required/>
                 </div>
                 <div>
-                    <button class='btn btn-primary' id="connection" name="connection" onClick={this.seConnecter}>Se connecter</button>
+                    <button className='btn btn-primary' id="connection" name="connection" onClick={this.seConnecter}>Se connecter</button>
                 </div>
                 </div>
             </div>

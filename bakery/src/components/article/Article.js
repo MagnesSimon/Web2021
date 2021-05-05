@@ -53,9 +53,6 @@ class Article extends React.Component {
             </ul>
         )
     }
-    onButtonClickHandler =() => {
-
-    }
 
     //retourne les donnéees en liste pour la pagination
     componentDidMount() {
