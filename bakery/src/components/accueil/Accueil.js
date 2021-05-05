@@ -7,7 +7,7 @@ import Horaire from "./horaire";
 const Accueil = ({element}) => {
     return(
         <div>
-            <h1 classname="h1"> Boulangie Lonbois de Braine l'Alleud</h1>
+            <h1 classname="h1"> Boulangerie Lonbois de Braine l'Alleud</h1>
                 <img src={banniere} className="App-banniere" alt="banniere" />
                 <div className='bloc'>
                     <span>Boulangie - </span>
