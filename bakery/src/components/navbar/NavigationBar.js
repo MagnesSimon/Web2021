@@ -50,6 +50,7 @@ export const NavigationBarCO = ({sticky}) => (
                     <Nav.Item><Nav.Link href="/panier">| Panier </Nav.Link></Nav.Item>
                     <Nav.Item onClick={() => {localStorage.removeItem('user'); window.location.reload(false);}}>
                         <Nav.Link>|  Deconnexion</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/admin">| Admin </Nav.Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

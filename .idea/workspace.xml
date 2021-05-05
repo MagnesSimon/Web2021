@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/article/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/article/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
       <workItem from="1619603052715" duration="578000" />
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
-      <workItem from="1620210278340" duration="5833000" />
+      <workItem from="1620210278340" duration="5948000" />
     </task>
     <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
       <created>1620211603770</created>
@@ -85,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620216110803</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="épurage">
+      <created>1620216146313</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620216146313</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +105,7 @@
     <MESSAGE value="Correction bug prix total" />
     <MESSAGE value="Refresh de la barre de navigation en fonction de si on est connecté" />
     <MESSAGE value="Ajout de la deconnexion dans la navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la deconnexion dans la navbar" />
+    <MESSAGE value="épurage" />
+    <option name="LAST_COMMIT_MESSAGE" value="épurage" />
   </component>
 </project>

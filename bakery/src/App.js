@@ -22,6 +22,7 @@ function App() {
                     <Route path="/connexion" component={Connexion}/>
                     <Route path="/inscription" component={Inscription}/>
                     <Route path="/panier" component={Panier}/>
+                    <Route path="/admin" component={Panier}/>
                     <Route component={Accueil}/>
                 </Switch>
                 </Router>
