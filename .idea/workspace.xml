@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/article/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/article/Article.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +56,7 @@
       <workItem from="1619603052715" duration="578000" />
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
-      <workItem from="1620210278340" duration="5141000" />
+      <workItem from="1620210278340" duration="5788000" />
     </task>
     <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
       <created>1620211603770</created>
@@ -75,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620212170259</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refresh de la barre de navigation en fonction de si on est connecté">
+      <created>1620215501005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620215501005</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +88,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pas d'ajout au panier si pas connecter" />
     <MESSAGE value="Correction bug prix total" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug prix total" />
+    <MESSAGE value="Refresh de la barre de navigation en fonction de si on est connecté" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refresh de la barre de navigation en fonction de si on est connecté" />
   </component>
 </project>

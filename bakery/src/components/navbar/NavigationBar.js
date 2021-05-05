@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, Form, FormControl , NavbarBrand} from 'react-bootstrap';
+import {Nav, Navbar, Form, FormControl, NavbarBrand, Button} from 'react-bootstrap';
 import styled from 'styled-components';
 import useSticky from "../hooks/useSticky";
 import logo from "../../boulangerie/logo.jpg";
@@ -34,6 +34,7 @@ const Styles = styled.div`
   }
 `;
 
+
 export const NavigationBarCO = ({sticky}) => (
     <Styles>
         <Navbar className={sticky ? "navbar navbar-sticky" : "navbar"} expand="lg">
@@ -47,6 +48,8 @@ export const NavigationBarCO = ({sticky}) => (
                     <Nav.Item><Nav.Link href="/article">| Article </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/contact">| Contact </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/panier">| Panier </Nav.Link></Nav.Item>
+                    <Nav.Item onClick={() => {localStorage.removeItem('user'); window.location.reload(false);}}>
+                        <Nav.Link>|  Deconnexion</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
