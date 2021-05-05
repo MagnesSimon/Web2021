@@ -1,13 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import App from './App';
+import ReactDOM from 'react-dom'
 import React from 'react';
 import Horaire from './components/accueil/horaire';
 import Articles from './components/article/Article'
 import Connexion from './components/connexion/Connexion'
 
 
-test('renders learn react link', () => {
+it('renders without crashing', () => {
+  const div = document.createElement('div')
+  ReactDOM.render(<App />, div)
+})
+
+test('renders boulangerie Lombois', () => {
   render(<App />);
   const linkElement = screen.getByText(`Boulangerie Lonbois de Braine l'Alleud`);
   expect(linkElement).toBeInTheDocument();
