@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="" />
+    <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +30,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -52,16 +58,75 @@
       <workItem from="1619603052715" duration="578000" />
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
+      <workItem from="1620210278340" duration="6497000" />
     </task>
+    <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
+      <created>1620211603770</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620211603770</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Correction bug prix total">
+      <created>1620212170259</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620212170259</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refresh de la barre de navigation en fonction de si on est connecté">
+      <created>1620215501005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620215501005</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ajout de la deconnexion dans la navbar">
+      <created>1620216110803</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620216110803</updated>
+    </task>
+    <task id="LOCAL-00005" summary="épurage">
+      <created>1620216146313</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620216146313</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ajout admin à la nav bar">
+      <created>1620216265753</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620216265753</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="1920" y="0" width="1405" height="679" key="dock-window-1" timestamp="1619603480508">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1920" y="0" width="1405" height="679" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1619603480508" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pas d'ajout au panier si pas connecter" />
+    <MESSAGE value="Correction bug prix total" />
+    <MESSAGE value="Refresh de la barre de navigation en fonction de si on est connecté" />
+    <MESSAGE value="Ajout de la deconnexion dans la navbar" />
+    <MESSAGE value="épurage" />
+    <MESSAGE value="ajout admin à la nav bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout admin à la nav bar" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

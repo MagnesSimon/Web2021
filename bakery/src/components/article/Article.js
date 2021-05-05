@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
+import {NavigationBarCO, NavigationBarNOCO} from "../navbar/NavigationBar";
 
 const panier = [];
 
@@ -39,19 +40,24 @@ class Article extends React.Component {
       }
 
     recevoirArticle = (article) => {
-        localStorage.clear();
-        panier.push(article);
-        localStorage.setItem('panier',JSON.stringify(panier));
-        // Message de validation
-        toast('Articles ajouté dans le panier !')
+        if( ! localStorage.getItem('user')){
+            toast("Vous n'êtes pas connecté");
+        }
+        else {
+            localStorage.removeItem('panier');
+            panier.push(article);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            // Message de validation
+            toast('Articles ajouté dans le panier !');
 
 
-        return(
-            <ul>
-                <h3>Mon Panier</h3>
-                <Panier monPanier={panier}/>
-            </ul>
-        )
+            return (
+                <ul>
+                    <h3>Mon Panier</h3>
+                    <Panier monPanier={panier}/>
+                </ul>
+            )
+        }
     }
 
     //retourne les donnéees en liste pour la pagination
@@ -108,6 +114,7 @@ class Article extends React.Component {
         });
 
     };
+
 
     render() {
         return (
