@@ -39,19 +39,24 @@ class Article extends React.Component {
       }
 
     recevoirArticle = (article) => {
-        localStorage.clear();
-        panier.push(article);
-        localStorage.setItem('panier',JSON.stringify(panier));
-        // Message de validation
-        toast('Articles ajouté dans le panier !')
+        if( ! localStorage.getItem('user')){
+            toast("Vous n'êtes pas connecté");
+        }
+        else {
+            localStorage.removeItem('panier');
+            panier.push(article);
+            localStorage.setItem('panier', JSON.stringify(panier));
+            // Message de validation
+            toast('Articles ajouté dans le panier !');
 
 
-        return(
-            <ul>
-                <h3>Mon Panier</h3>
-                <Panier monPanier={panier}/>
-            </ul>
-        )
+            return (
+                <ul>
+                    <h3>Mon Panier</h3>
+                    <Panier monPanier={panier}/>
+                </ul>
+            )
+        }
     }
 
     //retourne les donnéees en liste pour la pagination
@@ -109,6 +114,7 @@ class Article extends React.Component {
 
     };
 
+
     render() {
         return (
             <div>
@@ -124,6 +130,10 @@ class Article extends React.Component {
                 {this.state.postData}
                 {this.state.showMessage && <p>Article ajouté avec succès</p>}
                 </div>
+                <div>
+                    <button onClick={() => this.testConnexion()}>test connexion</button>
+                    <button onClick={() => this.finConnexion()}>fin connexion</button>
+                </div>
                 <ReactPaginate
                     previousLabel={"prev"}
                     nextLabel={"next"}
@@ -138,6 +148,18 @@ class Article extends React.Component {
                     activeClassName={"active"}/>
             </div>
         )
+    }
+
+    testConnexion() {
+        if ( localStorage.getItem('user')) {
+            console.log("y a un user", localStorage.getItem('user'));
+        }
+        else {
+            console.log("pas de user");
+        }
+    }
+    finConnexion(){
+        localStorage.removeItem('user');
     }
 }
 

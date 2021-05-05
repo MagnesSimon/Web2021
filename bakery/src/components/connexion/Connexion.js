@@ -3,6 +3,8 @@ import React from "react";
 import '../../global.js'
 import { Form, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Connexion extends React.Component{
 
@@ -28,7 +30,7 @@ class Connexion extends React.Component{
     seConnecter = () =>{
         axios.get(window.url + '/user')
         .then(res =>{
-            const posts = res.data.map(obj => ({id : obj.id, nom : obj.nom, prenom: obj.prenom , mail : obj.mail,tel : obj.tel, mdp : obj.mdp}))
+            const posts = res.data.map(obj => ({id : obj.id, nom : obj.nom, prenom: obj.prenom , mail : obj.mail,tel : obj.tel, mdp : obj.mdp, admin: obj.admin}))
             console.log(posts)
             posts.find((post)=>{
                 if(this.state.mail == post.mail && this.state.mdp == post.mdp){
@@ -36,6 +38,7 @@ class Connexion extends React.Component{
                     console.log(post.id);
                     localStorage.setItem("user",JSON.stringify(post));
                     console.log(localStorage.getItem("user"));
+                    toast("Vous êtes maintenant connecté");
                     //this.props.history.push('/home')
                     
                 }
@@ -54,7 +57,7 @@ class Connexion extends React.Component{
         return <div className={'row-wrapper'}>
                 <div className="column-wrapper contact">
 
-
+                    <ToastContainer />
                 <h2>Se connecter</h2>
                 <div id="contact-form">
                     <label htmlFor="Mail">E-mail :</label>
