@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/panier/Panier.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/panier/Panier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/article/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/article/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
       <workItem from="1619603052715" duration="578000" />
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
-      <workItem from="1620210278340" duration="1781000" />
+      <workItem from="1620210278340" duration="5141000" />
     </task>
     <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
       <created>1620211603770</created>
@@ -65,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620211603770</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Correction bug prix total">
+      <created>1620212170259</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620212170259</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,6 +83,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pas d'ajout au panier si pas connecter" />
-    <option name="LAST_COMMIT_MESSAGE" value="pas d'ajout au panier si pas connecter" />
+    <MESSAGE value="Correction bug prix total" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction bug prix total" />
   </component>
 </project>

@@ -5,6 +5,7 @@ import { Form, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {NavigationBarCO, NavigationBarNOCO} from "../navbar/NavigationBar";
 
 class Connexion extends React.Component{
 
@@ -39,8 +40,8 @@ class Connexion extends React.Component{
                     localStorage.setItem("user",JSON.stringify(post));
                     console.log(localStorage.getItem("user"));
                     toast("Vous êtes maintenant connecté");
-                    //this.props.history.push('/home')
-                    
+                    this.props.history.push('/home')
+                    window.location.reload(false);
                 }
             })
             if(this.state.connecté === false){

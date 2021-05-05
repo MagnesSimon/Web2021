@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
+import {NavigationBarCO, NavigationBarNOCO} from "../navbar/NavigationBar";
 
 const panier = [];
 
@@ -160,6 +161,8 @@ class Article extends React.Component {
     }
     finConnexion(){
         localStorage.removeItem('user');
+        console.log("deco");
+        window.location.reload(false);
     }
 }
 
