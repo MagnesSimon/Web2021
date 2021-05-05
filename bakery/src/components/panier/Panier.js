@@ -45,17 +45,20 @@ class Panier extends React.Component {
     LancerCommande = () => {
         console.log("A faire");
     }
-    retirerPanier = (id) => {
+    retirerPanier = (id, prix) => {
+        console.log("prix article ",prix);
         this.state.posts.splice(id, 1);
         localStorage.removeItem('panier');
         localStorage.setItem('panier', JSON.stringify(this.state.posts));
         this.panierJSON = localStorage.getItem('panier');
         this.state.posts = JSON.parse(this.panierJSON);
+        //prixTotal -= prix;
 
         this.componentDidMount();
     }
 
     componentDidMount() {
+        prixTotal =0;
         this.panierJSON = localStorage.getItem('panier');
         this.state.panier = JSON.parse(this.panierJSON);
         //console.log("panier 3", this.state.panier);
@@ -76,7 +79,7 @@ class Panier extends React.Component {
                     <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
                     <div>{pd.nom}</div>
                     <div>{pd.prix.toFixed(2)}€</div>
-                    <button className={"no"} onClick={() => this.retirerPanier(pd.panierId)}>Retirer du panier</button>
+                    <button className={"no"} onClick={() => this.retirerPanier(pd.panierId, pd.prix)}>Retirer du panier</button>
                 </div>
             </React.Fragment>)
 
