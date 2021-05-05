@@ -4,6 +4,7 @@
     <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/navbar/NavigationBar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
       <workItem from="1619603052715" duration="578000" />
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
-      <workItem from="1620210278340" duration="5948000" />
+      <workItem from="1620210278340" duration="6497000" />
     </task>
     <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
       <created>1620211603770</created>
@@ -94,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620216146313</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ajout admin à la nav bar">
+      <created>1620216265753</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620216265753</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +114,19 @@
     <MESSAGE value="Refresh de la barre de navigation en fonction de si on est connecté" />
     <MESSAGE value="Ajout de la deconnexion dans la navbar" />
     <MESSAGE value="épurage" />
-    <option name="LAST_COMMIT_MESSAGE" value="épurage" />
+    <MESSAGE value="ajout admin à la nav bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout admin à la nav bar" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

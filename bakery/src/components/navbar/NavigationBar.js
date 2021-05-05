@@ -50,7 +50,6 @@ export const NavigationBarCO = ({sticky}) => (
                     <Nav.Item><Nav.Link href="/panier">| Panier </Nav.Link></Nav.Item>
                     <Nav.Item onClick={() => {localStorage.removeItem('user'); window.location.reload(false);}}>
                         <Nav.Link>|  Deconnexion</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/admin">| Admin </Nav.Link></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
@@ -76,6 +75,29 @@ export const NavigationBarNOCO = ({sticky}) => (
         </Navbar>
     </Styles>
 );
+
+export const NavigationBarCOAD = ({sticky}) => (
+    <Styles>
+        <Navbar className={sticky ? "navbar navbar-sticky" : "navbar"} expand="lg">
+            {/*{sticky ? "navbar navbar-sticky" : "navbar"}*/}
+            {/*<Navbar.Brand href="/">Tutorial</Navbar.Brand>*/}
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+            <NavbarBrand><a href='/'><img className='logo' src={logo}/></a></NavbarBrand>
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="m-md-auto">
+                    <Nav.Item><Nav.Link href="/">| Home </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/article">| Article </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/contact">| Contact </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/panier">| Panier </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/admin">| Admin </Nav.Link></Nav.Item>
+                    <Nav.Item onClick={() => {localStorage.removeItem('user'); window.location.reload(false);}}>
+                        <Nav.Link>|  Deconnexion</Nav.Link></Nav.Item>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    </Styles>
+);
+
 
 
 

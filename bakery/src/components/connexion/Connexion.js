@@ -36,12 +36,15 @@ class Connexion extends React.Component{
             posts.find((post)=>{
                 if(this.state.mail == post.mail && this.state.mdp == post.mdp){
                     this.state.connecté = true
-                    console.log(post.id);
                     localStorage.setItem("user",JSON.stringify(post));
-                    console.log(localStorage.getItem("user"));
+                    localStorage.setItem("admin", JSON.stringify(post.admin));
+
                     toast("Vous êtes maintenant connecté");
                     this.props.history.push('/home')
                     window.location.reload(false);
+
+                    console.log('user: ', localStorage.getItem('user'))
+                    console.log('admin: ', localStorage.getItem('admin'))
                 }
             })
             if(this.state.connecté === false){
