@@ -27,7 +27,7 @@ function App() {
                 </Router>
             </React.Fragment>
         );
-    }else if (localStorage.getItem('admin') == 1 ){
+    }else if (localStorage.getItem('user') && localStorage.getItem('admin') == 1 ){
         return (
             <React.Fragment>
                 <Router>
