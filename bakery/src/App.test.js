@@ -6,18 +6,13 @@ import React from 'react';
 import Horaire from './components/accueil/horaire';
 import Articles from './components/article/Article'
 import Connexion from './components/connexion/Connexion'
+import Panier from "./components/panier/Panier";
 
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(<App />, div)
 })
-
-test('renders boulangerie Lombois', () => {
-  render(<App />);
-  const linkElement = screen.getByText(`Boulangerie Lonbois de Braine l'Alleud`);
-  expect(linkElement).toBeInTheDocument();
-});
 
 test('horaire contient lundi', () => {
   render(<Horaire></Horaire>);
@@ -34,7 +29,13 @@ test('article contient text', () => {
 test('button de connexion', () => {
   render(<Connexion></Connexion>);
 
-const submitButton = screen.queryByText('connection')
+const submitButton = screen.queryByText('btn btn-primary')
 expect(submitButton).not.toBeInTheDocument()
-
 })
+
+test('panier contient text', () => {
+  render(<Panier></Panier>);
+  const linkElement = screen.getByText(`Lancer la commande`);
+  expect(linkElement).toBeInTheDocument();
+})
+
