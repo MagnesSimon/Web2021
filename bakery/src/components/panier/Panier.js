@@ -47,33 +47,40 @@ class Panier extends React.Component {
     }
 
     LancerCommande = () => {
-        //Recupération de l'id User
-        this.userJSON = localStorage.getItem('user');
-        this.state.user = JSON.parse(this.userJSON);
-        const idUser= this.state.user.id;
+        const temp = localStorage.getItem('panier')
+        if ( temp === null){
+            window.alert("Votre panier est vide");
+        }else{
+            //Recupération de l'id User
+            this.userJSON = localStorage.getItem('user');
+            this.state.user = JSON.parse(this.userJSON);
+            const idUser= this.state.user.id;
 
-        // Recupération des id articles
-        this.panierJSON = localStorage.getItem('panier');
-        this.state.panier = JSON.parse(this.panierJSON);
-        for(let i=0; i<this.state.panier.length;i++){
-            this.state.artId.push(this.state.panier[i].id);
-        }
-
-        // Envoi vers la db
-        for(let i=0;i<this.state.artId.length;i++){
-            const aEnvoyer = {
-                cli_id: idUser,
-                art_id: this.state.artId[i],
+            // Recupération des id articles
+            this.panierJSON = localStorage.getItem('panier');
+            this.state.panier = JSON.parse(this.panierJSON);
+            for(let i=0; i<this.state.panier.length;i++){
+                this.state.artId.push(this.state.panier[i].id);
             }
-            axios.post(window.url + '/commande', aEnvoyer);
-            console.log(aEnvoyer);
-        }
-        this.state.artId = [];
-        this.state.posts = [];
-        localStorage.setItem('panier', JSON.stringify(this.state.posts));
-        //toast("Commande effectuée");
-        this.componentDidMount();
 
+            // Envoi vers la db
+            for(let i=0;i<this.state.artId.length;i++){
+                const aEnvoyer = {
+                    cli_id: idUser,
+                    art_id: this.state.artId[i],
+                }
+                //axios.post(window.url + '/commande', aEnvoyer);
+                console.log(aEnvoyer);
+            }
+            // Reset du panier
+            this.state.artId = [];
+            this.state.posts = [];
+            localStorage.setItem('panier', JSON.stringify(this.state.posts));
+
+            this.componentDidMount();
+
+            window.alert("Félicitation votre commande est validée")
+        }
     }
 
     retirerPanier = (id, prix) => {
