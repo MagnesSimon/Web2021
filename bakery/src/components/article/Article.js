@@ -44,8 +44,12 @@ class Article extends React.Component {
         }
         else {
             //localStorage.removeItem('panier');
-            this.panierJSON = localStorage.getItem('panier');
-            this.state.panier = JSON.parse(this.panierJSON);
+            if (localStorage.getItem('panier')){
+                this.panierJSON = localStorage.getItem('panier');
+                this.state.panier = JSON.parse(this.panierJSON);
+            }else{
+                this.state.panier = [];
+            }
             this.state.panier.push(article);
             localStorage.setItem('panier', JSON.stringify(this.state.panier));
             // Message de validation

@@ -4,6 +4,7 @@ import Article from "../article/Article";
 import ArticlesListe from "./ArticlesListe";
 import {forEach} from "react-bootstrap/ElementChildren";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 
 let prixTotal = 0;
@@ -46,9 +47,6 @@ class Panier extends React.Component {
     }
 
     LancerCommande = () => {
-        //console.log("A faire");
-        //axios.post(window.url + '/commande', this.state)
-
         //Recupération de l'id User
         this.userJSON = localStorage.getItem('user');
         this.state.user = JSON.parse(this.userJSON);
@@ -71,9 +69,13 @@ class Panier extends React.Component {
             console.log(aEnvoyer);
         }
         this.state.artId = [];
-        localStorage.removeItem('panier');
+        this.state.posts = [];
+        localStorage.setItem('panier', JSON.stringify(this.state.posts));
+        //toast("Commande effectuée");
         this.componentDidMount();
+
     }
+
     retirerPanier = (id, prix) => {
         console.log("prix article ",prix);
         this.state.posts.splice(id, 1);
@@ -108,7 +110,7 @@ class Panier extends React.Component {
                     <img className={"image"} src={`data:image/jpeg;base64,${pd.image}`} />
                     <div>{pd.nom}</div>
                     <div>{pd.prix.toFixed(2)}€</div>
-                    <button className={"no"} onClick={() => this.retirerPanier(pd.panierId, pd.prix)}>Retirer du panier</button>
+                    <button className={"btn btn-info"} onClick={() => this.retirerPanier(pd.panierId, pd.prix)}>Retirer du panier</button>
                 </div>
             </React.Fragment>)
 
@@ -136,7 +138,7 @@ class Panier extends React.Component {
                     Total à payer: {prixTotal.toFixed(2)}
                 </div>
                 <div>
-                    <button className="lancerCommande" onClick={this.LancerCommande}>Lancer la commande</button>
+                    <button className="btn btn-info" onClick={this.LancerCommande}>Lancer la commande</button>
                 </div>
 
             </div>
