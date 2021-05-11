@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="99ef33ed-6fec-4efd-922d-a06168c0dc8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bakery/src/components/article/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/article/Article.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bakery/src/components/panier/Panier.js" beforeDir="false" afterPath="$PROJECT_DIR$/bakery/src/components/panier/Panier.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +57,7 @@
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
       <workItem from="1620210278340" duration="6497000" />
-      <workItem from="1620733262876" duration="12804000" />
+      <workItem from="1620733262876" duration="14353000" />
     </task>
     <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
       <created>1620211603770</created>
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620746244853</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Suppression du panier lorsque la commande est validée">
+      <created>1620747751949</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620747751949</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +145,7 @@
     <MESSAGE value="ajout de api commandes" />
     <MESSAGE value="cgmt de config db" />
     <MESSAGE value="bug d'ajout au panier + envoi de la commande vers la DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug d'ajout au panier + envoi de la commande vers la DB" />
+    <MESSAGE value="Suppression du panier lorsque la commande est validée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Suppression du panier lorsque la commande est validée" />
   </component>
 </project>
