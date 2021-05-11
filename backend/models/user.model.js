@@ -101,5 +101,37 @@ User.remove = (id, result) => {
     });
 };
 
+User.findAllCommandByUser = (result) => {
+    sql.query(
+        "SELECT us.nom, us.prenom, us.mail,us.tel, ar.art_nom, ar.prix FROM commandes as co join user as us on co.cli_id = us.id join articles as ar on ar.art_id = co.art_id", (err, res) => {
+            if (err) {
+                console.log("error: ", err);
+                result(null, err);
+                return;
+            }
+
+            result(null, res);
+        });
+};
+
+User.findCommandForUser = (userId, result) => {
+    sql.query(`SELECT us.nom, us.prenom, us.mail,us.tel, ar.art_nom, ar.prix FROM commandes as co join user as us on co.cli_id = us.id 
+    join articles as ar on ar.art_id = co.art_id WHERE us.id ="${userId}"`, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+
+        if (res.length) {
+            console.log("found user: ", res);
+            result(null, res);
+            return;
+        }
+
+        result({ kind: "not_found" }, null);
+    });
+};
+
 
 module.exports = User;

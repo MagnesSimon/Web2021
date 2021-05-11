@@ -112,3 +112,32 @@ exports.delete = (req, res) => {
         } else res.send({ message: `User was deleted successfully!` });
     });
 };
+
+exports.findAllCommandByUser = (req, res) => {
+    User.findAllCommandByUser((err, data) => {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving user."
+            });
+        else
+            res.send(data);
+    });
+
+};
+
+exports.findCommandForUser = (req, res) => {
+    User.findCommandForUser(req.params.id, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                res.status(404).send({
+                    message: `Not found user with id ${req.params.id}.`
+                });
+            } else {
+                res.status(500).send({
+                    message: "Error retrieving user with id " + req.params.id
+                });
+            }
+        } else res.send(data);
+    });
+};
