@@ -3,6 +3,7 @@ import ReactPaginate from "react-paginate";
 import Article from "../article/Article";
 import ArticlesListe from "./ArticlesListe";
 import {forEach} from "react-bootstrap/ElementChildren";
+import axios from "axios";
 
 
 let prixTotal = 0;
@@ -19,6 +20,8 @@ class Panier extends React.Component {
             perPage: 6,
             currentPage: 0,
             panier: [],
+            user:[],
+            artId: [],
         }
         this.handlePageClick = this
             .handlePageClick
@@ -43,7 +46,33 @@ class Panier extends React.Component {
     }
 
     LancerCommande = () => {
-        console.log("A faire");
+        //console.log("A faire");
+        //axios.post(window.url + '/commande', this.state)
+
+        //Recupération de l'id User
+        this.userJSON = localStorage.getItem('user');
+        this.state.user = JSON.parse(this.userJSON);
+        const idUser= this.state.user.id;
+
+        // Recupération des id articles
+        this.panierJSON = localStorage.getItem('panier');
+        this.state.panier = JSON.parse(this.panierJSON);
+        for(let i=0; i<this.state.panier.length;i++){
+            this.state.artId.push(this.state.panier[i].id);
+        }
+
+        // Envoi vers la db
+        for(let i=0;i<this.state.artId.length;i++){
+            const aEnvoyer = {
+                cli_id: idUser,
+                art_id: this.state.artId[i],
+            }
+            axios.post(window.url + '/commande', aEnvoyer);
+            console.log(aEnvoyer);
+        }
+        this.state.artId = [];
+        localStorage.removeItem('panier');
+        this.componentDidMount();
     }
     retirerPanier = (id, prix) => {
         console.log("prix article ",prix);

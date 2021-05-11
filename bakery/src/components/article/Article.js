@@ -10,8 +10,6 @@ import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
 import {NavigationBarCO, NavigationBarNOCO} from "../navbar/NavigationBar";
 
-const panier = [];
-
 class Article extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +22,8 @@ class Article extends React.Component {
             currentPage: 0,
             categorie: "",
             filter:[],
-            value: "Tout"
+            value: "Tout",
+            panier : [],
         }
         this.onChangeValue = this.onChangeValue.bind(this);
         this.handlePageClick = this
@@ -44,9 +43,11 @@ class Article extends React.Component {
             toast("Vous n'êtes pas connecté");
         }
         else {
-            localStorage.removeItem('panier');
-            panier.push(article);
-            localStorage.setItem('panier', JSON.stringify(panier));
+            //localStorage.removeItem('panier');
+            this.panierJSON = localStorage.getItem('panier');
+            this.state.panier = JSON.parse(this.panierJSON);
+            this.state.panier.push(article);
+            localStorage.setItem('panier', JSON.stringify(this.state.panier));
             // Message de validation
             toast('Articles ajouté dans le panier !');
 
@@ -54,7 +55,7 @@ class Article extends React.Component {
             return (
                 <ul>
                     <h3>Mon Panier</h3>
-                    <Panier monPanier={panier}/>
+                    <Panier monPanier={this.state.panier}/>
                 </ul>
             )
         }
