@@ -59,7 +59,7 @@ class Connexion extends React.Component{
 
     render (){
         return <div className={'row-wrapper'}>
-                <div className="column-wrapper contact">
+                <div className="column-wrapper connexion">
 
                     <ToastContainer />
                 <h2>Se connecter</h2>

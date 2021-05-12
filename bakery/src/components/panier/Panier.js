@@ -107,7 +107,7 @@ class Panier extends React.Component {
                     Total à payer: {prixTotal.toFixed(2)}
                 </div>
                 <div>
-                    <button className="lancerCommande" onClick={this.LancerCommande}>Lancer la commande</button>
+                    <button className="btn btn-primary" id="panier" onClick={this.LancerCommande}>Lancer la commande</button>
                 </div>
 
             </div>

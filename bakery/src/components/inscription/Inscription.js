@@ -76,38 +76,87 @@ class Inscription extends React.Component {
     render () {
         return <form onSubmit={this.submitHandler}>
             <div className={'row-wrapper'}>
+
                 <div className="column-wrapper contact">
-                <h2>Veuillez remplir les informations ci-dessous</h2>
-                <div>
-                    <label htmlFor="Nom">Nom :</label>
-                    <input type="texte" id="nom" name="nom" value={this.state.nom} onChange={this.handleChange} required/> 
-                </div>
-                <div>
-                    <label htmlFor="Prenom">Prenom :</label>
-                    <input type="texte" id="prenom" name="prenom" value={this.state.prenom} onChange={this.handleChange} required/>
-                </div>
-                <div>
-                    <label htmlFor="Mail">Mail :</label>
-                    <input type="texte" id="mail" name="mail" value={this.state.mail} onChange={this.handleChange} required/>
-                </div>
-                <div>
-                    <label htmlFor="Tem">Numéro de téléphone :</label>
-                    <input type="texte" id="tel" name="tel" value={this.state.tel} onChange={this.handleChange }required/>
-                </div>
-                <div>
-                    <label htmlFor="Mdp">Mot de passe :</label>
-                    <input type="password" id="mdp" name="mdp" value={this.state.mdp} onChange={this.handleChange} required/>
-                </div>
-                <div>
-                    <label htmlFor="ConfMdp">Confirmer mot de passe :</label>
-                    <input type="password" id="confmdp" name="confmdp" value={this.state.confmdp} onChange={this.handleChange} required/>
-                </div>
-                <div className="confirmer"> 
-                    <button className='btn btn-primary' type="submit" id='sub' name='sub' >S'inscrire</button>
-                </div>
+                    <h2>Veuillez remplir les informations ci-dessous</h2>
+                    <div>
+                        <label htmlFor="Nom">Nom :</label>
+                        <input type="texte" id="nom" name="nom" value={this.state.nom} onChange={this.handleChange}
+                               required/>
+                    </div>
+                    <div>
+                        <label htmlFor="Prenom">Prenom :</label>
+                        <input type="texte" id="prenom" name="prenom" value={this.state.prenom}
+                               onChange={this.handleChange} required/>
+                    </div>
+                    <div>
+                        <label htmlFor="Mail">Mail :</label>
+                        <input type="texte" id="mail" name="mail" value={this.state.mail} onChange={this.handleChange}
+                               required/>
+                    </div>
+                    <div>
+                        <label htmlFor="Tem">Numéro de téléphone :</label>
+                        <input type="texte" id="tel" name="tel" value={this.state.tel} onChange={this.handleChange}
+                               required/>
+                    </div>
+                    <div>
+                        <label htmlFor="Mdp">Mot de passe :</label>
+                        <input type="password" id="mdp" name="mdp" value={this.state.mdp} onChange={this.handleChange}
+                               required/>
+                    </div>
+                    <div>
+                        <label htmlFor="ConfMdp">Confirmer mot de passe :</label>
+                        <input type="password" id="confmdp" name="confmdp" value={this.state.confmdp}
+                               onChange={this.handleChange} required/>
+                    </div>
+                    <div className="confirmer">
+                        <button className='btn btn-primary' type="submit" id='sub' name='sub'>S'inscrire</button>
+                    </div>
+
+                    <div className={'column-wrapper contact'}>
+                        <h2>Veuillez remplir les informations ci-dessous</h2>
+                        <div>
+                            <label htmlFor="Nom">Nom :</label>
+                            <input type="texte" id="nom" name="nom" value={this.state.nom} onChange={this.handleChange}
+                                   required/>
+                        </div>
+                        <div>
+                            <label htmlFor="Prenom">Prenom :</label>
+                            <input type="texte" id="prenom" name="prenom" value={this.state.prenom}
+                                   onChange={this.handleChange} required/>
+                        </div>
+                        <div>
+                            <label htmlFor="Mail">Mail :</label>
+                            <input type="texte" id="mail" name="mail" value={this.state.mail}
+                                   onChange={this.handleChange}
+                                   required/>
+                        </div>
+                        <div>
+                            <label htmlFor="Tem">Numéro de téléphone :</label>
+                            <input type="texte" id="tel" name="tel" value={this.state.tel} onChange={this.handleChange}
+                                   required/>
+                        </div>
+                        <div>
+                            <label htmlFor="Mdp">Mot de passe :</label>
+                            <input type="password" id="mdp" name="mdp" value={this.state.mdp}
+                                   onChange={this.handleChange}
+                                   required/>
+                        </div>
+                        <div>
+                            <label htmlFor="ConfMdp">Confirmer mot de passe :</label>
+                            <input type="password" id="confmdp" name="confmdp" value={this.state.confmdp}
+                                   onChange={this.handleChange} required/>
+                        </div>
+                        <div className="confirmer">
+                            <button type="submit" className="btn btn-primary" id='sub' name='sub'>S'inscrire</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </form>
+
+
     }
 }
 

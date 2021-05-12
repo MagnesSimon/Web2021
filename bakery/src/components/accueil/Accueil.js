@@ -47,9 +47,6 @@ const Accueil = ({element}) => {
                 <div className={"column-wrapper w-50"}>
                     <Horaire></Horaire>
                 </div>
-                <div className={"column-wrapper w-50"}>
-                    info map ? position ?
-                </div>
             </div>
 
 
