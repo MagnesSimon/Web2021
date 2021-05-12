@@ -13,4 +13,8 @@ module.exports = app => {
 
     app.delete("/user/:id", user.delete);
 
+    app.get("/commands", user.findAllCommandByUser);
+
+    app.get("/usercommande/:id", user.findCommandForUser);
+
 };
