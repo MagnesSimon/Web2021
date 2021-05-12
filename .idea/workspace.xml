@@ -59,6 +59,7 @@
       <workItem from="1620203348122" duration="1734000" />
       <workItem from="1620205155905" duration="131000" />
       <workItem from="1620210278340" duration="6497000" />
+      <workItem from="1620812574089" duration="253000" />
     </task>
     <task id="LOCAL-00001" summary="pas d'ajout au panier si pas connecter">
       <created>1620211603770</created>
@@ -117,13 +118,18 @@
     <MESSAGE value="ajout admin à la nav bar" />
     <option name="LAST_COMMIT_MESSAGE" value="ajout admin à la nav bar" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="1974" y="11" width="1392" height="668" maximized="true" key="dock-window-1" timestamp="1620812768342">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1974" y="11" width="1392" height="668" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1620812768342" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/bakery/src/components/connexion/Connexion.js</url>
-          <line>38</line>
-          <properties lambdaOrdinal="-1" />
+          <line>40</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

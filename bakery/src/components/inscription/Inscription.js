@@ -75,7 +75,8 @@ class Inscription extends React.Component {
     
     render () {
         return <form onSubmit={this.submitHandler}>
-            <div>
+            <div className={'row-wrapper'}>
+                <div className="column-wrapper contact">
                 <h2>Veuillez remplir les informations ci-dessous</h2>
                 <div>
                     <label htmlFor="Nom">Nom :</label>
@@ -102,7 +103,8 @@ class Inscription extends React.Component {
                     <input type="password" id="confmdp" name="confmdp" value={this.state.confmdp} onChange={this.handleChange} required/>
                 </div>
                 <div className="confirmer"> 
-                    <button type="submit" id='sub' name='sub' >S'inscrire</button>
+                    <button className='btn btn-primary' type="submit" id='sub' name='sub' >S'inscrire</button>
+                </div>
                 </div>
             </div>
         </form>
