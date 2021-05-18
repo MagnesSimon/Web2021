@@ -8,8 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import ReactPaginate from 'react-paginate';
 import Panier from "../panier/Panier";
-
-const panier = [];
+import {NavigationBarCO, NavigationBarNOCO} from "../navbar/NavigationBar";
 
 class Article extends React.Component {
     constructor(props) {
@@ -23,7 +22,8 @@ class Article extends React.Component {
             currentPage: 0,
             categorie: "",
             filter:[],
-            value: "Tout"
+            value: "Tout",
+            panier : [],
         }
         this.onChangeValue = this.onChangeValue.bind(this);
         this.handlePageClick = this
@@ -39,19 +39,30 @@ class Article extends React.Component {
       }
 
     recevoirArticle = (article) => {
-        localStorage.clear();
-        panier.push(article);
-        localStorage.setItem('panier',JSON.stringify(panier));
-        // Message de validation
-        toast('Articles ajouté dans le panier !')
+        if( ! localStorage.getItem('user')){
+            toast("Vous n'êtes pas connecté");
+        }
+        else {
+            //localStorage.removeItem('panier');
+            if (localStorage.getItem('panier')){
+                this.panierJSON = localStorage.getItem('panier');
+                this.state.panier = JSON.parse(this.panierJSON);
+            }else{
+                this.state.panier = [];
+            }
+            this.state.panier.push(article);
+            localStorage.setItem('panier', JSON.stringify(this.state.panier));
+            // Message de validation
+            toast('Articles ajouté dans le panier !');
 
 
-        return(
-            <ul>
-                <h3>Mon Panier</h3>
-                <Panier monPanier={panier}/>
-            </ul>
-        )
+            return (
+                <ul>
+                    <h3>Mon Panier</h3>
+                    <Panier monPanier={this.state.panier}/>
+                </ul>
+            )
+        }
     }
 
     //retourne les donnéees en liste pour la pagination
@@ -108,6 +119,7 @@ class Article extends React.Component {
         });
 
     };
+
 
     render() {
         return (

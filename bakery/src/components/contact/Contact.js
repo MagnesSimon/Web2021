@@ -57,18 +57,6 @@ export class Contact extends React.Component{
                                 Envoyer le message
                             </Button>
                         </Form>
-                        {/* <form >
-                        <div className="form-group">
-                        <Form.Control type="text" placeholder="Nom et prénom" className={'border- bg-- border-none pl-2 w-100'} id="name" required/>
-                        </div>
-                        <div className="form-group">
-                        <Form.Control type="email" placeholder="Mail" className={'border- bg-- border-none pl-2'} id="name" aria-describedby="emailHelp" required/>
-                        </div>
-                        <div className="form-group">
-                        <Form.Control type="text" placeholder="Message" className={'border- bg-- border-none pl-2'} id="name" required/>
-                        </div>
-                        <Button variant="primary" type="submit" className={'border- bg color ml-3 shd-- border-none mt-3 p-1'}>Envoyer</Button>
-                    </form> */}
                     </div>
                 </div>
             </>

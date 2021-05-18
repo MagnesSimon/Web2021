@@ -1,7 +1,7 @@
 .row-wrapper{
     display: flex;
     align-items: center;
-    justify-content: space-around;/* ou between selon le cas*/
+    justify-content: space-around;
 }
 
 .column-wrapper{
