@@ -71,7 +71,7 @@ Article.updateById = (id, article, result) => {
 };
 
 Article.remove = (id, result) => {
-    sql.query("DELETE FROM articles WHERE id = ?", id, (err, res) => {
+    sql.query("DELETE FROM articles WHERE art_id = ?", id, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);

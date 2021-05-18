@@ -103,7 +103,6 @@ class Article extends React.Component {
             this.setState({ posts });
             this.setState({filter});
         });
-        
     }
 
 
