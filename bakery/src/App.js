@@ -10,6 +10,7 @@ import Inscription from "./components/inscription/Inscription";
 import Connexion from "./components/connexion/Connexion";
 import Contact from "./components/contact/Contact";
 import Panier from "./components/panier/Panier";
+import Admin from "./components/admin/Admin"
 
 function App() {
     if (localStorage.getItem('user') && localStorage.getItem('admin') == 0 ) {
@@ -37,7 +38,7 @@ function App() {
                     <Route path="/connexion" component={Connexion}/>
                     <Route path="/inscription" component={Inscription}/>
                     <Route path="/panier" component={Panier}/>
-                    <Route path="/admin" component={Panier}/>
+                    <Route path="/admin" component={Admin}/>
                     <Route component={Accueil}/>
                 </Switch>
                 </Router>
