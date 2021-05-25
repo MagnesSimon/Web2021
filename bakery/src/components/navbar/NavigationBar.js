@@ -47,6 +47,7 @@ export const NavigationBarCO = ({sticky}) => (
                     <Nav.Item><Nav.Link href="/">| Home </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/article">| Article </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/contact">| Contact </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/gdpr">| GDPR </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/panier">| Panier </Nav.Link></Nav.Item>
                     <Nav.Item onClick={() => {localStorage.removeItem('user','admin'); window.location.reload(false);}}>
                         <Nav.Link>|  Deconnexion</Nav.Link></Nav.Item>
@@ -68,6 +69,7 @@ export const NavigationBarNOCO = ({sticky}) => (
                     <Nav.Item><Nav.Link href="/">| Home </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/article">| Article </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/contact">| Contact </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/gdpr">| GDPR </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link className="Connexion" href="/connexion">| Connexion </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inscription">| Inscription </Nav.Link></Nav.Item>
                 </Nav>
@@ -88,6 +90,7 @@ export const NavigationBarCOAD = ({sticky}) => (
                     <Nav.Item><Nav.Link href="/">| Home </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/article">| Article </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/contact">| Contact </Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/gdpr">| GDPR </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/panier">| Panier </Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/admin">| Admin </Nav.Link></Nav.Item>
                     <Nav.Item onClick={() => {localStorage.removeItem('user','admin'); window.location.reload(false);}}>
