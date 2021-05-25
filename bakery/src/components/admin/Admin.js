@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../global.js'
-import Select from 'react-select';
 
 
 class Admin extends React.Component {
